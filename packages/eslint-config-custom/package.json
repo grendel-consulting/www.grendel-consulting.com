@@ -7,7 +7,7 @@
   "dependencies": {
     "eslint": "7.23.0",
     "eslint-config-prettier": "8.8.0",
-    "eslint-config-turbo": "1.9.3"
+    "eslint-config-turbo": "1.9.8"
   },
   "devDependencies": {
     "typescript": "5.0.4"
