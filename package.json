@@ -1,0 +1,39 @@
+{
+  "name": "www.grendel-consulting.com",
+  "description": "Brochureware site for Grendel Consulting",
+  "author": "James Ramirez",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "start": "turbo run start",
+    "synth": "turbo run synth",
+    "format": "prettier  --ignore-path .gitignore --write \"**/*.{json,ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "esbuild": "0.17.18",
+    "eslint-config-custom": "workspace:*",
+    "prettier": "2.8.7",
+    "turbo": "1.9.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "packageManager": "pnpm@8.5.0",
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  }
+}
