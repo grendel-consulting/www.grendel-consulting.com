@@ -88,13 +88,13 @@ importers:
     dependencies:
       '@cdktf/provider-aws':
         specifier: 14.0.1
-        version: 14.0.1(cdktf@0.16.1)(constructs@10.2.4)
+        version: 14.0.1(cdktf@0.16.1)(constructs@10.2.30)
       cdktf:
         specifier: 0.16.1
-        version: 0.16.1(constructs@10.2.4)
+        version: 0.16.1(constructs@10.2.30)
       constructs:
-        specifier: 10.2.4
-        version: 10.2.4
+        specifier: 10.2.30
+        version: 10.2.30
     devDependencies:
       '@types/jest':
         specifier: 29.5.1
@@ -1395,15 +1395,15 @@ packages:
     resolution: {integrity: sha512-snXIGNiZpqjno3XYQN2lbBB+05hsQR/LSttbtIW1c0gmZ7Kh/DIo0YrxlDxCDulAMFPFM8J+4voLwvYepSj3sw==}
     hasBin: true
 
-  /@cdktf/provider-aws@14.0.1(cdktf@0.16.1)(constructs@10.2.4):
+  /@cdktf/provider-aws@14.0.1(cdktf@0.16.1)(constructs@10.2.30):
     resolution: {integrity: sha512-8ZVGtS7PEbHMVRs3SzqVNW/DFZQF5TiIvHn1rnmbk9B9z1EhkjugyKra6RE0hqngvk82KmU7sm4pAroNe/D3ig==}
     engines: {node: '>= 16.14.0'}
     peerDependencies:
       cdktf: ^0.16.0
       constructs: ^10.0.0
     dependencies:
-      cdktf: 0.16.1(constructs@10.2.4)
-      constructs: 10.2.4
+      cdktf: 0.16.1(constructs@10.2.30)
+      constructs: 10.2.30
     dev: false
 
   /@cspotcode/source-map-support@0.8.1:
@@ -4438,13 +4438,13 @@ packages:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
     dev: false
 
-  /cdktf@0.16.1(constructs@10.2.4):
+  /cdktf@0.16.1(constructs@10.2.30):
     resolution: {integrity: sha512-rXbpQcZWqBSvdeYP1MsyUnB/VBkLa8dTSlJQkhRqs7MwmsRypr2xUwxYZjmiIWotadbSq7lxp60nmm4L181+7g==}
     peerDependencies:
       constructs: ^10.0.25
     dependencies:
       archiver: 5.3.1
-      constructs: 10.2.4
+      constructs: 10.2.30
       json-stable-stringify: 1.0.2
       semver: 7.5.0
     dev: false
@@ -4768,9 +4768,9 @@ packages:
       tslib: 2.5.0
       upper-case: 2.0.2
 
-  /constructs@10.2.4:
-    resolution: {integrity: sha512-lls5uUt3LktiR5xqjwYndV+jzHRbdZn5PuSsc5iUA2zrKTJohTe/zIi0h3/GtMYrkWrAePYorFG2xBXvtPGpPQ==}
-    engines: {node: '>= 14.17.0'}
+  /constructs@10.2.30:
+    resolution: {integrity: sha512-nPDBBANnrrTE91ftBGl+OJ2vaKL8f9D3jSEXnggl+9VdztESahhmE+4n/HoRqvduD65eCaFNRbY3OT9fGKmTyA==}
+    engines: {node: '>= 16.14.0'}
     dev: false
 
   /content-disposition@0.5.4:
