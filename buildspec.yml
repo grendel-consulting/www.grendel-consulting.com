@@ -17,9 +17,4 @@ phases:
 
 artifacts:
   files:
-    - '**/*'
-  secondary-artifacts:
-    website:
-      files:
-        - 'frontend/website/public/**/*'
-      name: website
+    - 'frontend/website/public/**/*'
