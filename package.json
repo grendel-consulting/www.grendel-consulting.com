@@ -11,7 +11,8 @@
     "lint": "turbo run lint",
     "start": "turbo run start",
     "synth": "turbo run synth",
-    "format": "prettier  --ignore-path .gitignore --write \"**/*.{json,ts,tsx,md}\""
+    "format": "prettier  --ignore-path .gitignore --write \"**/*.{json,ts,tsx,md}\"",
+    "ci": "turbo run ci"
   },
   "devDependencies": {
     "esbuild": "0.17.19",
