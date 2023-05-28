@@ -2,7 +2,19 @@ import { App } from "cdktf";
 import { SpaWebsite } from "./stacks/spa-website";
 
 const stacks = new App();
-new SpaWebsite(stacks, "staging");
-new SpaWebsite(stacks, "production");
+const commonConfig = {
+  apexDomain: "grendel-consulting.com",
+  region: "eu-west-1",
+  tfc_organisation: "grendel-consulting",
+};
+
+new SpaWebsite(stacks, "staging", {
+  ...commonConfig,
+  ...{ subDomain: "staging" },
+});
+new SpaWebsite(stacks, "production", {
+  ...commonConfig,
+  ...{ subDomain: "www" },
+});
 
 stacks.synth();
