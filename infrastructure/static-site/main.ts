@@ -10,7 +10,7 @@ const commonConfig = {
 
 new SpaWebsite(stacks, "staging", {
   ...commonConfig,
-  ...{ subDomain: "staging" },
+  ...{ subDomain: "staging-www" },
 });
 new SpaWebsite(stacks, "production", {
   ...commonConfig,
