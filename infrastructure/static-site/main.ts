@@ -1,13 +1,8 @@
-import { App, CloudBackend, NamedCloudWorkspace } from "cdktf";
+import { App } from "cdktf";
 import { SpaWebsite } from "./stacks/spa-website";
 
-const app = new App();
-const stack = new SpaWebsite(app, "website");
+const stacks = new App();
+new SpaWebsite(stacks, "staging");
+new SpaWebsite(stacks, "production");
 
-new CloudBackend(stack, {
-  hostname: "app.terraform.io",
-  organization: "grendel-consulting",
-  workspaces: new NamedCloudWorkspace("www.grendel-consulting.com"),
-});
-
-app.synth();
+stacks.synth();
