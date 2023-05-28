@@ -1,6 +1,8 @@
 version: 0.2
 
 env:
+  parameter-store:
+    TF_TOKEN_app_terraform_io: '/terraform/token'
   variables:
     TARGET_DIR: 'infrastructure/static-site/cdktf.out/stacks/staging'
   git-credential-helper: yes
@@ -19,6 +21,7 @@ phases:
   build:
     commands:
       - cd $TARGET_DIR
+      - terraform login
       - terraform init -input=false
       - terraform validate
 
