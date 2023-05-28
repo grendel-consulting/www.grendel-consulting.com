@@ -5,7 +5,7 @@ env:
     TF_TOKEN_app_terraform_io: '/terraform/token'
   variables:
     TARGET_DIR: 'infrastructure/static-site/cdktf.out/stacks/staging'
-    TF_CLI_CONFIG_FILE: '$CODEBUILD_SRC_DIR/.terraformrc'
+    TF_CLI_CONFIG_FILE: '.terraformrc'
     TF_IN_AUTOMATION: 'true'
   git-credential-helper: yes
 
