@@ -24,11 +24,12 @@ export class SpaWebsite extends TerraformStack {
 
     const props = SpaWebsiteConfig.parse(config ?? {});
     const targetDomain = `${props.subDomain}.${props.apexDomain}`;
+    const targetWorkspace = targetDomain.replace(".", "-");
 
     new CloudBackend(this, {
       hostname: "app.terraform.io",
       organization: props.tfc_organisation,
-      workspaces: new NamedCloudWorkspace(targetDomain),
+      workspaces: new NamedCloudWorkspace(targetWorkspace),
     });
 
     new AwsProvider(this, "aws", {
