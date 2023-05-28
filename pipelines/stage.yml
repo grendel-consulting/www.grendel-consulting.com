@@ -5,6 +5,8 @@ env:
     TF_TOKEN_app_terraform_io: '/terraform/token'
   variables:
     TARGET_DIR: 'infrastructure/static-site/cdktf.out/stacks/staging'
+    TF_CLI_CONFIG_FILE: '$CODEBUILD_SRC_DIR/.terraformrc'
+    TF_IN_AUTOMATION: 'true'
   git-credential-helper: yes
 
 phases:
@@ -21,7 +23,7 @@ phases:
   build:
     commands:
       - cd $TARGET_DIR
-      - terraform login
+      - printf 'credentials "app.terraform.io" {\n token = "%s"\n}' "$TF_TOKEN_app_terraform_io" > $TF_CLI_CONFIG_FILE
       - terraform init -input=false
       - terraform validate
 
