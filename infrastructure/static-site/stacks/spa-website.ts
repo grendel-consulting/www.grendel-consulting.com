@@ -24,7 +24,7 @@ export class SpaWebsite extends TerraformStack {
 
     const props = SpaWebsiteConfig.parse(config ?? {});
     const targetDomain = `${props.subDomain}.${props.apexDomain}`;
-    const targetWorkspace = targetDomain.replace(".", "-");
+    const targetWorkspace = targetDomain.replaceAll(".", "-");
 
     new CloudBackend(this, {
       hostname: "app.terraform.io",
