@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    TARGET_DIR: 'infrastructure/static-website/cdktf.out/stacks/staging'
+    TARGET_DIR: 'infrastructure/static-site/cdktf.out/stacks/staging'
   git-credential-helper: yes
 
 phases:
@@ -12,11 +12,10 @@ phases:
     commands:
       - wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
       - echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
-      - sudo apt update && sudo apt install terraform && sudo apt install tree
+      - sudo apt update && sudo apt install terraform
   pre_build:
     commands:
       - terraform --version
-      - tree -d
   build:
     commands:
       - cd $TARGET_DIR
