@@ -1,22 +1,50 @@
-import { TerraformStack, TerraformOutput } from "cdktf";
+import {
+  CloudBackend,
+  NamedCloudWorkspace,
+  TerraformStack,
+  TerraformOutput,
+} from "cdktf";
 import { AwsProvider } from "@cdktf/provider-aws/lib/provider";
+import { DataAwsRoute53Zone } from "@cdktf/provider-aws/lib/data-aws-route53-zone";
 import { Construct } from "constructs";
+import { z } from "zod";
+
+const SpaWebsiteConfig = z.object({
+  apexDomain: z.string(),
+  subDomain: z.string(),
+  tfc_organisation: z.string(),
+  region: z.string(),
+});
+
+export type SpaWebsiteConfigType = z.infer<typeof SpaWebsiteConfig>;
 
 export class SpaWebsite extends TerraformStack {
-  constructor(scope: Construct, ns: string) {
+  constructor(scope: Construct, ns: string, config?: SpaWebsiteConfigType) {
     super(scope, ns);
 
-    const apexDomain = "grendel-consulting.com";
-    const subDomain = "www";
-    const targetDomain = `${subDomain}.${apexDomain}`;
-    const region = "eu-west-1";
+    const props = SpaWebsiteConfig.parse(config ?? {});
+    const targetDomain = `${props.subDomain}.${props.apexDomain}`;
+
+    new CloudBackend(this, {
+      hostname: "app.terraform.io",
+      organization: props.tfc_organisation,
+      workspaces: new NamedCloudWorkspace(targetDomain),
+    });
 
     new AwsProvider(this, "aws", {
-      region,
+      region: props.region,
+    });
+
+    const existingZone = new DataAwsRoute53Zone(this, "existing", {
+      name: props.apexDomain,
     });
 
     new TerraformOutput(this, "targetDomains", {
       value: targetDomain,
+    });
+
+    new TerraformOutput(this, "targetZone", {
+      value: existingZone.zoneId,
     });
   }
 }
