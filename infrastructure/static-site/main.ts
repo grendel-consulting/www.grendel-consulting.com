@@ -17,7 +17,7 @@ if (staging === undefined || production === undefined) {
 
 new SpaWebsite(stacks, "staging", {
   ...commonConfig,
-  ...{ subDomain: "staging-www", target: staging },
+  ...{ subDomain: "staging-www", target: staging, restricted: false },
 });
 new SpaWebsite(stacks, "production", {
   ...commonConfig,
