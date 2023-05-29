@@ -6,6 +6,7 @@ import {
 } from "cdktf";
 import { AwsProvider } from "@cdktf/provider-aws/lib/provider";
 import { DataAwsRoute53Zone } from "@cdktf/provider-aws/lib/data-aws-route53-zone";
+import { CloudfrontOriginAccessIdentity } from "@cdktf/provider-aws/lib/cloudfront-origin-access-identity";
 import { Construct } from "constructs";
 import { z } from "zod";
 
@@ -14,6 +15,7 @@ const SpaWebsiteConfig = z.object({
   subDomain: z.string(),
   tfc_organisation: z.string(),
   region: z.string(),
+  target: z.string(),
 });
 
 export type SpaWebsiteConfigType = z.infer<typeof SpaWebsiteConfig>;
@@ -32,11 +34,38 @@ export class SpaWebsite extends TerraformStack {
       workspaces: new NamedCloudWorkspace(targetWorkspace),
     });
 
+    // Default provider is in the target AWS Account
     new AwsProvider(this, "aws", {
+      region: props.region,
+      assumeRole: [
+        {
+          roleArn: `arn:aws:iam::${props.target}:role/tfc-role`,
+        },
+      ],
+    });
+
+    // const cloudfront = new AwsProvider(this, "aws.cloudfront", {
+    //   region: "us-east-1",
+    //   alias: "cloudfront",
+    //   assumeRole: [
+    //     {
+    //       roleArn: `arn:aws:iam::${props.target}:role/tfc-role`,
+    //     },
+    //   ],
+    // });
+
+    const controlPlaneProvider = new AwsProvider(this, "aws.controlplane", {
+      alias: "controlplane",
       region: props.region,
     });
 
+    // const cloudfrontOai =
+    new CloudfrontOriginAccessIdentity(this, "oai", {
+      comment: `CloudFront OAI for ${targetDomain}`,
+    });
+
     const existingZone = new DataAwsRoute53Zone(this, "existing", {
+      provider: controlPlaneProvider,
       name: props.apexDomain,
     });
 

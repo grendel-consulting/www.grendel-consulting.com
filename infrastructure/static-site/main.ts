@@ -8,13 +8,20 @@ const commonConfig = {
   tfc_organisation: "grendel-consulting",
 };
 
+const staging = process.env["STAGING_AWS_ACCOUNT"];
+const production = process.env["PRODUCTION_AWS_ACCOUNT"];
+
+if (staging === undefined || production === undefined) {
+  throw new Error("Missing AWS Account IDs");
+}
+
 new SpaWebsite(stacks, "staging", {
   ...commonConfig,
-  ...{ subDomain: "staging-www" },
+  ...{ subDomain: "staging-www", target: staging },
 });
 new SpaWebsite(stacks, "production", {
   ...commonConfig,
-  ...{ subDomain: "www" },
+  ...{ subDomain: "www", target: production },
 });
 
 stacks.synth();

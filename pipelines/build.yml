@@ -1,6 +1,9 @@
 version: 0.2
 
 env:
+  parameter-store:
+    STAGING_AWS_ACCOUNT: '/work/corporate-site/staging'
+    PRODUCTION_AWS_ACCOUNT: '/work/corporate-site/production'
   git-credential-helper: yes
 
 phases:
