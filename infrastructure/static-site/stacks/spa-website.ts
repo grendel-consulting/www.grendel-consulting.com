@@ -275,7 +275,7 @@ export class SpaWebsite extends TerraformStack {
       origin: [
         {
           domainName: bucket.bucketRegionalDomainName,
-          originId: `primary-${originId}`,
+          originId,
           s3OriginConfig: {
             originAccessIdentity: cloudfrontOai.cloudfrontAccessIdentityPath,
           },
