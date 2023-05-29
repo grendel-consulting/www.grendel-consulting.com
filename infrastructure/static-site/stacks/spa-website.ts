@@ -139,7 +139,7 @@ export class SpaWebsite extends TerraformStack {
     });
 
     const cachePolicy = new CloudfrontCachePolicy(this, "cache_policy", {
-      name: `${targetDomain}-cache-policy`,
+      name: `${targetWorkspace}-cache-policy`,
       parametersInCacheKeyAndForwardedToOrigin: {
         cookiesConfig: {
           cookieBehavior: "none",
@@ -184,7 +184,7 @@ export class SpaWebsite extends TerraformStack {
       this,
       "response_headers",
       {
-        name: `${targetDomain}-security-headers`,
+        name: `${targetWorkspace}-security-headers`,
         // corsHeadersConfig: {}
         securityHeadersConfig: {
           contentSecurityPolicy: {
