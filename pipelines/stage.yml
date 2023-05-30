@@ -5,6 +5,7 @@ env:
     TF_TOKEN_app_terraform_io: '/terraform/token'
   variables:
     TARGET_DIR: 'infrastructure/static-site/cdktf.out/stacks/staging'
+    WEBSITE_DIR: 'frontend/website/public'
     TF_CLI_CONFIG_FILE: '.terraformrc'
     TF_IN_AUTOMATION: 'true'
   git-credential-helper: yes
@@ -27,4 +28,8 @@ phases:
       - terraform init -input=false
       - terraform validate
       - terraform apply -input=false -auto-approve
+  post_build:
+    commands:
+      - cd $CODEBUILD_SRC_DIR
+      - aws s3 sync $WEBSITE_DIR s3://$(terraform output -raw bucket) --delete --dry-run
 
