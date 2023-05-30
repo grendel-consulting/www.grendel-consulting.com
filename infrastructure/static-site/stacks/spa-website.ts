@@ -3,6 +3,9 @@ import {
   NamedCloudWorkspace,
   TerraformStack,
   TerraformOutput,
+  TerraformIterator,
+  Token,
+  ref,
 } from "cdktf";
 import { AwsProvider } from "@cdktf/provider-aws/lib/provider";
 import { DataAwsRoute53Zone } from "@cdktf/provider-aws/lib/data-aws-route53-zone";
@@ -80,6 +83,7 @@ export class SpaWebsite extends TerraformStack {
       name: props.apexDomain,
     });
 
+    
     const certificate = new AcmCertificate(this, "certificate", {
       provider: cloudfrontProvider,
       domainName: targetDomain,
@@ -87,12 +91,21 @@ export class SpaWebsite extends TerraformStack {
       validationMethod: "DNS",
     });
 
+    // Iterators currently fail for sets: https://github.com/hashicorp/terraform-cdk/issues/2001
+    // This is a weird workaround for that, heavily relying on internals
+    // using fromMap() instead of fromList() to circumvent wrapping in toset()
+    const validationOptionsIterator = TerraformIterator.fromMap(
+      // to circumvent wrapping a set in tolist() as for_each requires a set
+      certificate.interpolationForAttribute("domain_validation_options")
+    );
+
     const validation = new Route53Record(this, "validation_records", {
       provider: controlPlaneProvider,
+      forEach: validationOptionsIterator,
       zoneId: existingZone.zoneId,
-      name: certificate.domainValidationOptions.get(0).resourceRecordName,
-      type: certificate.domainValidationOptions.get(0).resourceRecordType,
-      records: [certificate.domainValidationOptions.get(0).resourceRecordValue],
+      name: validationOptionsIterator.getString("resourceRecordName"),
+      type: validationOptionsIterator.getString("resourceRecordType"),
+      records: [validationOptionsIterator.getString("resourceRecordValue")],
       ttl: 360,
       allowOverwrite: true,
     });
@@ -100,7 +113,11 @@ export class SpaWebsite extends TerraformStack {
     new AcmCertificateValidation(this, "validation", {
       provider: cloudfrontProvider,
       certificateArn: certificate.arn,
-      validationRecordFqdns: [validation.fqdn],
+      validationRecordFqdns: Token.asList(
+        ref(
+          `${validation.terraformResourceType}.${validation.friendlyUniqueId}.*.fqdn`
+        )
+      ),
     });
 
     const cloudfrontOai = new CloudfrontOriginAccessIdentity(this, "oai", {
