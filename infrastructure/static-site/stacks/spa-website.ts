@@ -171,13 +171,12 @@ export class SpaWebsite extends TerraformStack {
       maxTtl: 31536000,
     });
 
-    // FIXME - DYNSECRET
     const policy = [
       "base-uri 'self'",
       "default-src 'none'",
-      "script-src 'self' 'unsafe-inline' https: 'nonce-DYNSECRET' 'strict-dynamic'",
+      "script-src 'self' 'unsafe-inline' https:",
       "require-trusted-types-for 'script'",
-      "style-src 'self' 'unsafe-inline' https: 'nonce-DYNSECRET' 'strict-dynamic'",
+      "style-src 'self' 'unsafe-inline' https:",
       "img-src 'self' data:",
       "font-src 'self' data:",
       "connect-src 'self'",
@@ -200,7 +199,6 @@ export class SpaWebsite extends TerraformStack {
       "response_headers",
       {
         name: `${targetWorkspace}-security-headers`,
-        // corsHeadersConfig: {}
         securityHeadersConfig: {
           contentSecurityPolicy: {
             contentSecurityPolicy: policy.join("; "),

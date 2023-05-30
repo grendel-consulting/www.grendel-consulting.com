@@ -24,9 +24,9 @@ const IndexPage: React.FC<PageProps> = () => {
       </p>
       <footer className={styles.footer}>
         <p>
-          Limited company, registered in England and Wales, with company number{" "}
-          10125435. Registered office: 25 Victoria Gardens, Burgess Hill, RH15{" "}
-          9NB
+          Grendel Consulting Limited, a company registered in England and Wales,
+          with company number 10125435. Registered office: 25 Victoria Gardens,
+          Burgess Hill, RH15 9NB.
         </p>
         <p>
           &copy; 2016-{new Date().getFullYear()} Grendel Consulting Limited. All{" "}
