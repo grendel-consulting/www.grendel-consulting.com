@@ -3,9 +3,6 @@ import {
   NamedCloudWorkspace,
   TerraformStack,
   TerraformOutput,
-  TerraformIterator,
-  Token,
-  ref,
 } from "cdktf";
 import { AwsProvider } from "@cdktf/provider-aws/lib/provider";
 import { DataAwsRoute53Zone } from "@cdktf/provider-aws/lib/data-aws-route53-zone";
