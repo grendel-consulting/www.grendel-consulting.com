@@ -32,5 +32,5 @@ phases:
   post_build:
     commands:
       - cd $CODEBUILD_SRC_DIR
-      - aws s3 sync $WEBSITE_DIR $WEBSITE_BUCKET --delete --dry-run
+      - aws s3 sync $WEBSITE_DIR $WEBSITE_BUCKET --delete --dryrun
 
