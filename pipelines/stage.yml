@@ -28,8 +28,9 @@ phases:
       - terraform init -input=false
       - terraform validate
       - terraform apply -input=false -auto-approve
+      - export WEBSITE_BUCKET=s3://$(terraform output -raw bucket)
   post_build:
     commands:
       - cd $CODEBUILD_SRC_DIR
-      - aws s3 sync $WEBSITE_DIR s3://$(terraform output -raw bucket) --delete --dry-run
+      - aws s3 sync $WEBSITE_DIR $WEBSITE_BUCKET --delete --dry-run
 
