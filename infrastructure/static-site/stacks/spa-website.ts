@@ -181,7 +181,6 @@ export class SpaWebsite extends TerraformStack {
       "font-src 'self' data:",
       "connect-src 'self'",
       "worker-src 'self'",
-      "prefetch-src 'self'",
       "form-action 'self'",
       "object-src 'none'",
       "frame-ancestors 'none'",
@@ -245,17 +244,17 @@ export class SpaWebsite extends TerraformStack {
               override: true,
             },
             {
-              header: "Permissions-Policy-Report-Only",
+              header: "Permissions-Policy",
               value: "fullscreen=(self)",
               override: true,
             },
             {
-              header: "Cross-Origin-Embedder-Policy-Report-Only",
+              header: "Cross-Origin-Embedder-Policy",
               value: "require-corp; report-to='default'",
               override: true,
             },
             {
-              header: "Cross-Origin-Opener-Policy-Report-Only",
+              header: "Cross-Origin-Opener-Policy",
               value: "same-origin; report-to='default'",
               override: true,
             },
