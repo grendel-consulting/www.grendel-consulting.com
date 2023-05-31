@@ -342,7 +342,7 @@ export class SpaWebsite extends TerraformStack {
       value: bucket.bucket,
     });
 
-    new TerraformOutput(this, "cloudfont_distribution", {
+    new TerraformOutput(this, "cloudfront_distribution", {
       value: distribution.id,
     });
 
