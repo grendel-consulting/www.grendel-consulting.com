@@ -27,6 +27,7 @@ const SpaWebsiteConfig = z.object({
   region: z.string(),
   target: z.string(),
   restricted: z.boolean().optional(),
+  includeApex: z.boolean().optional(),
 });
 
 export type SpaWebsiteConfigType = z.infer<typeof SpaWebsiteConfig>;
@@ -43,6 +44,7 @@ export class SpaWebsite extends TerraformStack {
     const reportingEndpoint = "https://hrothgar.uriports.com/reports";
 
     const isRestricted = props.restricted ?? false;
+    const includeApex = props.includeApex ?? false;
 
     new CloudBackend(this, {
       hostname: "app.terraform.io",
@@ -83,7 +85,7 @@ export class SpaWebsite extends TerraformStack {
     const certificate = new AcmCertificate(this, "certificate", {
       provider: cloudfrontProvider,
       domainName: targetDomain,
-      subjectAlternativeNames: [props.apexDomain],
+      subjectAlternativeNames: includeApex ? [props.apexDomain] : [],
       validationMethod: "DNS",
     });
 
@@ -321,18 +323,19 @@ export class SpaWebsite extends TerraformStack {
       },
     });
 
-    new Route53Record(this, "apex", {
-      provider: controlPlaneProvider,
-      zoneId: existingZone.zoneId,
-      name: props.apexDomain,
-      type: "A",
-      alias: {
-        name: distribution.domainName,
-        zoneId: distribution.hostedZoneId,
-        evaluateTargetHealth: false,
-      },
-    });
-
+    if (includeApex) {
+      new Route53Record(this, "apex", {
+        provider: controlPlaneProvider,
+        zoneId: existingZone.zoneId,
+        name: props.apexDomain,
+        type: "A",
+        alias: {
+          name: distribution.domainName,
+          zoneId: distribution.hostedZoneId,
+          evaluateTargetHealth: false,
+        },
+      });
+    }
     new TerraformOutput(this, "cname", {
       value: targetDomain,
     });
