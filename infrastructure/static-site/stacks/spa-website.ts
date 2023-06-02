@@ -266,7 +266,7 @@ export class SpaWebsite extends TerraformStack {
     );
 
     const distribution = new CloudfrontDistribution(this, "distribution", {
-      aliases: [targetDomain],
+      aliases: includeApex ? [`_${targetDomain}`, `*.${props.apexDomain}`] : [targetDomain],
       defaultRootObject: "index.html",
 
       isIpv6Enabled: true,
