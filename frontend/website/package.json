@@ -32,8 +32,8 @@
   },
   "devDependencies": {
     "@types/node": "18.16.18",
-    "@types/react": "18.2.12",
-    "@types/react-dom": "18.2.5",
+    "@types/react": "18.2.13",
+    "@types/react-dom": "18.2.6",
     "eslint-plugin-flowtype": "8.0.3",
     "gatsby-plugin-pnpm": "1.2.10",
     "prop-types": "15.8.1",
