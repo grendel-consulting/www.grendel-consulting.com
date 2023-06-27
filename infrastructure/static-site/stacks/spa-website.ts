@@ -142,8 +142,8 @@ export class SpaWebsite extends TerraformStack {
           resources: [`${bucket.arn}/*`],
           principals: [
             {
-              type: "CanonicalUser",
-              identifiers: [cloudfrontOai.s3CanonicalUserId],
+              type: "AWS",
+              identifiers: [cloudfrontOai.iamArn],
             },
           ],
         },
