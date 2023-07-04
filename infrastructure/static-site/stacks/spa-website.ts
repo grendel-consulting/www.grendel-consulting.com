@@ -260,6 +260,11 @@ export class SpaWebsite extends TerraformStack {
               value: "same-origin; report-to='default'",
               override: true,
             },
+            {
+              header: "Cross-Origin-Resource-Policy",
+              value: "same-site",
+              override: true,
+            },
           ],
         },
       }
