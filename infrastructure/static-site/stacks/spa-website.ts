@@ -179,7 +179,7 @@ export class SpaWebsite extends TerraformStack {
       "base-uri 'self'",
       "default-src 'none'",
       "script-src 'self' 'unsafe-inline' https:",
-      "require-trusted-types-for 'script'",
+      // "require-trusted-types-for 'script'",
       "style-src 'self' 'unsafe-inline' https:",
       "img-src 'self' data:",
       "font-src 'self' data:",
