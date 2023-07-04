@@ -2,7 +2,8 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `brochureware`,
+    title: `Grendel Consulting`,
+    description: `We are a boutique consultancy providing fractional CTO services to startups and small businesses.`,
     siteUrl: `https://www.grendel-consulting.com`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
