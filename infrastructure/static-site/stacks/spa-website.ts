@@ -167,6 +167,8 @@ export class SpaWebsite extends TerraformStack {
         queryStringsConfig: {
           queryStringBehavior: "none",
         },
+        enableAcceptEncodingBrotli: true,
+        enableAcceptEncodingGzip: true,
       },
       minTtl: 0,
       defaultTtl: 86400,
