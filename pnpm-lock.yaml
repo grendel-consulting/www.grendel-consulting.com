@@ -36,32 +36,32 @@ importers:
         specifier: 2.3.1
         version: 2.3.1(@types/node@18.18.1)(webpack@5.88.2)
       gatsby:
-        specifier: 5.12.4
-        version: 5.12.4(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+        specifier: 5.12.5
+        version: 5.12.5(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       gatsby-plugin-image:
         specifier: 3.12.0
-        version: 3.12.0(@babel/core@7.21.4)(gatsby-plugin-sharp@5.12.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.4)(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)
+        version: 3.12.0(@babel/core@7.21.4)(gatsby-plugin-sharp@5.12.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.5)(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)
       gatsby-plugin-manifest:
         specifier: 5.12.0
-        version: 5.12.0(gatsby@5.12.4)(graphql@16.8.0)
+        version: 5.12.0(gatsby@5.12.5)(graphql@16.8.0)
       gatsby-plugin-mdx:
         specifier: 5.12.0
-        version: 5.12.0(@mdx-js/react@2.3.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.4)(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)
+        version: 5.12.0(@mdx-js/react@2.3.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.5)(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0)
       gatsby-plugin-sharp:
         specifier: 5.12.0
-        version: 5.12.0(gatsby@5.12.4)(graphql@16.8.0)
+        version: 5.12.0(gatsby@5.12.5)(graphql@16.8.0)
       gatsby-plugin-sitemap:
         specifier: 6.12.0
-        version: 6.12.0(gatsby@5.12.4)(react-dom@18.2.0)(react@18.2.0)
+        version: 6.12.0(gatsby@5.12.5)(react-dom@18.2.0)(react@18.2.0)
       gatsby-plugin-vanilla-extract:
         specifier: 4.0.1
-        version: 4.0.1(@vanilla-extract/css@1.13.0)(@vanilla-extract/webpack-plugin@2.3.1)(gatsby@5.12.4)
+        version: 4.0.1(@vanilla-extract/css@1.13.0)(@vanilla-extract/webpack-plugin@2.3.1)(gatsby@5.12.5)
       gatsby-source-filesystem:
         specifier: 5.12.0
-        version: 5.12.0(gatsby@5.12.4)
+        version: 5.12.0(gatsby@5.12.5)
       gatsby-transformer-sharp:
         specifier: 5.12.0
-        version: 5.12.0(gatsby-plugin-sharp@5.12.0)(gatsby@5.12.4)(graphql@16.8.0)
+        version: 5.12.0(gatsby-plugin-sharp@5.12.0)(gatsby@5.12.5)(graphql@16.8.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -83,7 +83,7 @@ importers:
         version: 8.0.3(@babel/plugin-syntax-flow@7.21.4)(@babel/plugin-transform-react-jsx@7.21.0)(eslint@8.50.0)
       gatsby-plugin-pnpm:
         specifier: 1.2.10
-        version: 1.2.10(gatsby@5.12.4)
+        version: 1.2.10(gatsby@5.12.5)
       prop-types:
         specifier: 15.8.1
         version: 15.8.1
@@ -4356,7 +4356,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /babel-plugin-remove-graphql-queries@5.12.0(@babel/core@7.21.4)(gatsby@5.12.4):
+  /babel-plugin-remove-graphql-queries@5.12.0(@babel/core@7.21.4)(gatsby@5.12.5):
     resolution: {integrity: sha512-9lLU6pYKtS0tSfqzehAHp1ODgTzOtoZPIkVfmjCTxATtEmgCO+Z8tptdW+pcp2cKEs9BIJ6SuOkE47SEXxVeiw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
@@ -4366,7 +4366,7 @@ packages:
       '@babel/core': 7.21.4
       '@babel/runtime': 7.21.0
       '@babel/types': 7.21.4
-      gatsby: 5.12.4(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      gatsby: 5.12.5(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       gatsby-core-utils: 4.12.0
 
   /babel-plugin-syntax-trailing-function-commas@7.0.0-beta.0:
@@ -6896,9 +6896,9 @@ packages:
       tmp: 0.2.1
       xdg-basedir: 4.0.0
 
-  /gatsby-graphiql-explorer@3.12.0:
-    resolution: {integrity: sha512-vr86oLhif5uZ+VSTE34DYjtBDCIHWpJHh4+65fmgZh+WtDv1lyONJ/WWmyD+dNMHlGsZtR6wVvBjrj5iFRDGRw==}
-    engines: {node: '>=18.0.0'}
+  /gatsby-graphiql-explorer@3.12.1:
+    resolution: {integrity: sha512-c2iG+4nAft2cTS9zgnPUAYNBtxTWGKjI26QIfjuo25j7/klnz8rLQYdj6TA4Z2Y3yyTyBspAHr9ho6zvOHlBJg==}
+    engines: {node: '>=14.15.0'}
 
   /gatsby-legacy-polyfills@3.12.0:
     resolution: {integrity: sha512-hj0M4w4xFvKHtBNE3StkLmbCS3LXK0oxW5g3UkubbyMAwFqylQnWzXfysBpeFicQN/tr2px1cNGaqp91Z3Nh+g==}
@@ -6954,7 +6954,7 @@ packages:
       '@parcel/transformer-js': 2.8.3(@parcel/core@2.8.3)
       '@parcel/transformer-json': 2.8.3(@parcel/core@2.8.3)
 
-  /gatsby-plugin-image@3.12.0(@babel/core@7.21.4)(gatsby-plugin-sharp@5.12.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.4)(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0):
+  /gatsby-plugin-image@3.12.0(@babel/core@7.21.4)(gatsby-plugin-sharp@5.12.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.5)(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-zvkEotc3EgWfxdUuIeu81fN/dTY8GRVxGYwRKI7kkHpKAFUz2CIIQjxg16LSRxv0lGfRUxfPqxuMqBuk99GWOQ==}
     peerDependencies:
       '@babel/core': ^7.12.3
@@ -6975,16 +6975,16 @@ packages:
       '@babel/runtime': 7.21.0
       '@babel/traverse': 7.21.4
       babel-jsx-utils: 1.1.0
-      babel-plugin-remove-graphql-queries: 5.12.0(@babel/core@7.21.4)(gatsby@5.12.4)
+      babel-plugin-remove-graphql-queries: 5.12.0(@babel/core@7.21.4)(gatsby@5.12.5)
       camelcase: 6.3.0
       chokidar: 3.5.3
       common-tags: 1.8.2
       fs-extra: 11.1.1
-      gatsby: 5.12.4(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      gatsby: 5.12.5(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       gatsby-core-utils: 4.12.0
-      gatsby-plugin-sharp: 5.12.0(gatsby@5.12.4)(graphql@16.8.0)
-      gatsby-plugin-utils: 4.12.0(gatsby@5.12.4)(graphql@16.8.0)
-      gatsby-source-filesystem: 5.12.0(gatsby@5.12.4)
+      gatsby-plugin-sharp: 5.12.0(gatsby@5.12.5)(graphql@16.8.0)
+      gatsby-plugin-utils: 4.12.0(gatsby@5.12.5)(graphql@16.8.0)
+      gatsby-source-filesystem: 5.12.0(gatsby@5.12.5)
       objectFitPolyfill: 2.3.5
       prop-types: 15.8.1
       react: 18.2.0
@@ -6994,23 +6994,23 @@ packages:
       - supports-color
     dev: false
 
-  /gatsby-plugin-manifest@5.12.0(gatsby@5.12.4)(graphql@16.8.0):
+  /gatsby-plugin-manifest@5.12.0(gatsby@5.12.5)(graphql@16.8.0):
     resolution: {integrity: sha512-M4tq4AX4yVNUQnYQ5SI1ba/Khqof4PtyVtIpzzGE82O53Jg3M5AWZ0KGcz+d3UFdw1PGXYF+UtTzPlzMiTTeEg==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       gatsby: ^5.0.0-next
     dependencies:
       '@babel/runtime': 7.21.0
-      gatsby: 5.12.4(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      gatsby: 5.12.5(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       gatsby-core-utils: 4.12.0
-      gatsby-plugin-utils: 4.12.0(gatsby@5.12.4)(graphql@16.8.0)
+      gatsby-plugin-utils: 4.12.0(gatsby@5.12.5)(graphql@16.8.0)
       semver: 7.5.4
       sharp: 0.32.1
     transitivePeerDependencies:
       - graphql
     dev: false
 
-  /gatsby-plugin-mdx@5.12.0(@mdx-js/react@2.3.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.4)(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0):
+  /gatsby-plugin-mdx@5.12.0(@mdx-js/react@2.3.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.5)(graphql@16.8.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-ILjKk7NR+WdXGaFYdVRxjY04BChhZzY960HslTySjipgm0AzVPEjW1UQDXEeHKHdo7aLhrOlhifVYCXoq/FaOw==}
     peerDependencies:
       '@mdx-js/react': ^2.0.0
@@ -7027,10 +7027,10 @@ packages:
       deepmerge: 4.3.1
       estree-util-build-jsx: 2.2.2
       fs-extra: 11.1.1
-      gatsby: 5.12.4(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      gatsby: 5.12.5(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       gatsby-core-utils: 4.12.0
-      gatsby-plugin-utils: 4.12.0(gatsby@5.12.4)(graphql@16.8.0)
-      gatsby-source-filesystem: 5.12.0(gatsby@5.12.4)
+      gatsby-plugin-utils: 4.12.0(gatsby@5.12.5)(graphql@16.8.0)
+      gatsby-source-filesystem: 5.12.0(gatsby@5.12.5)
       gray-matter: 4.0.3
       mdast-util-mdx: 2.0.1
       mdast-util-to-hast: 10.2.0
@@ -7048,7 +7048,7 @@ packages:
       - supports-color
     dev: false
 
-  /gatsby-plugin-page-creator@5.12.0(gatsby@5.12.4)(graphql@16.8.0):
+  /gatsby-plugin-page-creator@5.12.0(gatsby@5.12.5)(graphql@16.8.0):
     resolution: {integrity: sha512-CwpI0Bp20+t7D8CVMD3R09df4eDo2RVB6Z6vgpmNdNzcRzk8GojuLSrdlA2s/RzwyCuxpDGyGGu5Ocnp4xJEhQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
@@ -7060,10 +7060,10 @@ packages:
       chokidar: 3.5.3
       fs-exists-cached: 1.0.0
       fs-extra: 11.1.1
-      gatsby: 5.12.4(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      gatsby: 5.12.5(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       gatsby-core-utils: 4.12.0
       gatsby-page-utils: 3.12.0
-      gatsby-plugin-utils: 4.12.0(gatsby@5.12.4)(graphql@16.8.0)
+      gatsby-plugin-utils: 4.12.0(gatsby@5.12.5)(graphql@16.8.0)
       gatsby-telemetry: 4.12.0
       globby: 11.1.0
       lodash: 4.17.21
@@ -7072,17 +7072,17 @@ packages:
       - graphql
       - supports-color
 
-  /gatsby-plugin-pnpm@1.2.10(gatsby@5.12.4):
+  /gatsby-plugin-pnpm@1.2.10(gatsby@5.12.5):
     resolution: {integrity: sha512-29xjIakNEUY42OBb3wI9Thmawr5EcUUOB3dB8nE51yr/TfKQFCREk+HAOATQHTNedG3VZhgU4wVjl2V3wgOXJA==}
     peerDependencies:
       gatsby: ~2.x.x || ~3.x.x || ~4.x.x
     dependencies:
-      gatsby: 5.12.4(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      gatsby: 5.12.5(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       lodash.get: 4.4.2
       lodash.uniq: 4.5.0
     dev: true
 
-  /gatsby-plugin-sharp@5.12.0(gatsby@5.12.4)(graphql@16.8.0):
+  /gatsby-plugin-sharp@5.12.0(gatsby@5.12.5)(graphql@16.8.0):
     resolution: {integrity: sha512-of9E26/eLenTgNUjzFYJGbwIIGoXRCOCA1Dsz7dKvcx11b0pNf27C65AiEWPudWXHl+OUjFX/bNNBBooqN+nlg==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
@@ -7094,9 +7094,9 @@ packages:
       debug: 4.3.4
       filenamify: 4.3.0
       fs-extra: 11.1.1
-      gatsby: 5.12.4(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      gatsby: 5.12.5(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       gatsby-core-utils: 4.12.0
-      gatsby-plugin-utils: 4.12.0(gatsby@5.12.4)(graphql@16.8.0)
+      gatsby-plugin-utils: 4.12.0(gatsby@5.12.5)(graphql@16.8.0)
       lodash: 4.17.21
       probe-image-size: 7.2.3
       semver: 7.5.4
@@ -7106,7 +7106,7 @@ packages:
       - supports-color
     dev: false
 
-  /gatsby-plugin-sitemap@6.12.0(gatsby@5.12.4)(react-dom@18.2.0)(react@18.2.0):
+  /gatsby-plugin-sitemap@6.12.0(gatsby@5.12.5)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-wD8c++ubDOdYHND+w1nAkdpNGc9Tb0VLZua8PeVSSAFgqgQzgm+LXfuW2yg5wNUOkYG9Qc9HlkORg+oyzk3xTQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
@@ -7116,14 +7116,14 @@ packages:
     dependencies:
       '@babel/runtime': 7.21.0
       common-tags: 1.8.2
-      gatsby: 5.12.4(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      gatsby: 5.12.5(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       minimatch: 3.1.2
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       sitemap: 7.1.1
     dev: false
 
-  /gatsby-plugin-typescript@5.12.0(gatsby@5.12.4):
+  /gatsby-plugin-typescript@5.12.0(gatsby@5.12.5):
     resolution: {integrity: sha512-6oLxghN1y/XqDQKg8MwWgvJnkQu+5D+5NZqOlpDsGkJQz+k06S3WTK+diGnGJ9epmE0i7vCY5ZutGgrJ7icA+w==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
@@ -7135,12 +7135,12 @@ packages:
       '@babel/plugin-proposal-optional-chaining': 7.21.0(@babel/core@7.21.4)
       '@babel/preset-typescript': 7.21.4(@babel/core@7.21.4)
       '@babel/runtime': 7.21.0
-      babel-plugin-remove-graphql-queries: 5.12.0(@babel/core@7.21.4)(gatsby@5.12.4)
-      gatsby: 5.12.4(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      babel-plugin-remove-graphql-queries: 5.12.0(@babel/core@7.21.4)(gatsby@5.12.5)
+      gatsby: 5.12.5(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
     transitivePeerDependencies:
       - supports-color
 
-  /gatsby-plugin-utils@4.12.0(gatsby@5.12.4)(graphql@16.8.0):
+  /gatsby-plugin-utils@4.12.0(gatsby@5.12.5)(graphql@16.8.0):
     resolution: {integrity: sha512-lU84VmWC9qGojROMZkBgGjCAzxcAUlyGAsd75vjj2y3yqGYtyvqInvK5tZvDyNNVvU21u040Ps4AKIvRVgMV/Q==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
@@ -7150,7 +7150,7 @@ packages:
       '@babel/runtime': 7.21.0
       fastq: 1.15.0
       fs-extra: 11.1.1
-      gatsby: 5.12.4(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      gatsby: 5.12.5(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       gatsby-core-utils: 4.12.0
       gatsby-sharp: 1.12.0
       graphql: 16.8.0
@@ -7159,7 +7159,7 @@ packages:
       joi: 17.9.2
       mime: 3.0.0
 
-  /gatsby-plugin-vanilla-extract@4.0.1(@vanilla-extract/css@1.13.0)(@vanilla-extract/webpack-plugin@2.3.1)(gatsby@5.12.4):
+  /gatsby-plugin-vanilla-extract@4.0.1(@vanilla-extract/css@1.13.0)(@vanilla-extract/webpack-plugin@2.3.1)(gatsby@5.12.5):
     resolution: {integrity: sha512-j8zsyg/vnsgQPEJmun4d4FYtKqVqnoeC8f6kSUZNohPkjLD8aCHCyDjJzHrsc1Th6I+SiFXkGyHIdK8ZAX0RkQ==}
     peerDependencies:
       '@vanilla-extract/css': ^1.0.0
@@ -7168,7 +7168,7 @@ packages:
     dependencies:
       '@vanilla-extract/css': 1.13.0
       '@vanilla-extract/webpack-plugin': 2.3.1(@types/node@18.18.1)(webpack@5.88.2)
-      gatsby: 5.12.4(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      gatsby: 5.12.5(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
     dev: false
 
   /gatsby-react-router-scroll@6.12.0(@gatsbyjs/reach-router@2.0.1)(react-dom@18.2.0)(react@18.2.0):
@@ -7203,7 +7203,7 @@ packages:
     dependencies:
       sharp: 0.32.1
 
-  /gatsby-source-filesystem@5.12.0(gatsby@5.12.4):
+  /gatsby-source-filesystem@5.12.0(gatsby@5.12.5):
     resolution: {integrity: sha512-0BZkgADBu56vTzZ6TLvrMXhp8MzpEqvtpsI+VRtNTlsu6ULaHRjoMClomlAqWecjBXTkujhwpSjnIfEmpmCaLQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
@@ -7213,7 +7213,7 @@ packages:
       chokidar: 3.5.3
       file-type: 16.5.4
       fs-extra: 11.1.1
-      gatsby: 5.12.4(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      gatsby: 5.12.5(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       gatsby-core-utils: 4.12.0
       mime: 3.0.0
       pretty-bytes: 5.6.0
@@ -7241,7 +7241,7 @@ packages:
     transitivePeerDependencies:
       - encoding
 
-  /gatsby-transformer-sharp@5.12.0(gatsby-plugin-sharp@5.12.0)(gatsby@5.12.4)(graphql@16.8.0):
+  /gatsby-transformer-sharp@5.12.0(gatsby-plugin-sharp@5.12.0)(gatsby@5.12.5)(graphql@16.8.0):
     resolution: {integrity: sha512-nx7taigcXEcvhWVaLTWaox+UwbD7bomwbY3kw7XAE5nEYlAlMVgnpY+L3KlE3bmMoNx5afXIrSWa3Ufaip4/9w==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
@@ -7252,9 +7252,9 @@ packages:
       bluebird: 3.7.2
       common-tags: 1.8.2
       fs-extra: 11.1.1
-      gatsby: 5.12.4(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
-      gatsby-plugin-sharp: 5.12.0(gatsby@5.12.4)(graphql@16.8.0)
-      gatsby-plugin-utils: 4.12.0(gatsby@5.12.4)(graphql@16.8.0)
+      gatsby: 5.12.5(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      gatsby-plugin-sharp: 5.12.0(gatsby@5.12.5)(graphql@16.8.0)
+      gatsby-plugin-utils: 4.12.0(gatsby@5.12.5)(graphql@16.8.0)
       probe-image-size: 7.2.3
       semver: 7.5.4
       sharp: 0.32.1
@@ -7274,8 +7274,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /gatsby@5.12.4(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-FVUKCrZUxA80uhrTMli5B3AVaJeJJfM4rVbHeoi1Vae4Z1/EBYPDxamVLRVPDHGluhThiyPlZ6/32DAop7NQiQ==}
+  /gatsby@5.12.5(babel-eslint@10.1.0)(esbuild@0.19.4)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-7BCWmzY+Gmy8PpByzEpvQnZu0fOiDPSiU35HRnjL5yJjGm1j3d7YymIs54j14h5ENJ3ep6QhRbJ0z590CjNxDg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     requiresBuild: true
@@ -7321,7 +7321,7 @@ packages:
       babel-plugin-add-module-exports: 1.0.4
       babel-plugin-dynamic-import-node: 2.3.3
       babel-plugin-lodash: 3.3.4
-      babel-plugin-remove-graphql-queries: 5.12.0(@babel/core@7.21.4)(gatsby@5.12.4)
+      babel-plugin-remove-graphql-queries: 5.12.0(@babel/core@7.21.4)(gatsby@5.12.5)
       babel-preset-gatsby: 3.12.0(@babel/core@7.21.4)(core-js@3.31.0)
       better-opn: 2.1.1
       bluebird: 3.7.2
@@ -7366,14 +7366,14 @@ packages:
       fs-extra: 11.1.1
       gatsby-cli: 5.12.1
       gatsby-core-utils: 4.12.0
-      gatsby-graphiql-explorer: 3.12.0
+      gatsby-graphiql-explorer: 3.12.1
       gatsby-legacy-polyfills: 3.12.0
       gatsby-link: 5.12.0(@gatsbyjs/reach-router@2.0.1)(react-dom@18.2.0)(react@18.2.0)
       gatsby-page-utils: 3.12.0
       gatsby-parcel-config: 1.12.0(@parcel/core@2.8.3)
-      gatsby-plugin-page-creator: 5.12.0(gatsby@5.12.4)(graphql@16.8.0)
-      gatsby-plugin-typescript: 5.12.0(gatsby@5.12.4)
-      gatsby-plugin-utils: 4.12.0(gatsby@5.12.4)(graphql@16.8.0)
+      gatsby-plugin-page-creator: 5.12.0(gatsby@5.12.5)(graphql@16.8.0)
+      gatsby-plugin-typescript: 5.12.0(gatsby@5.12.5)
+      gatsby-plugin-utils: 4.12.0(gatsby@5.12.5)(graphql@16.8.0)
       gatsby-react-router-scroll: 6.12.0(@gatsbyjs/reach-router@2.0.1)(react-dom@18.2.0)(react@18.2.0)
       gatsby-script: 2.12.0(@gatsbyjs/reach-router@2.0.1)(react-dom@18.2.0)(react@18.2.0)
       gatsby-telemetry: 4.12.0
