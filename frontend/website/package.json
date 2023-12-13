@@ -37,6 +37,6 @@
     "eslint-plugin-flowtype": "8.0.3",
     "gatsby-plugin-pnpm": "1.2.10",
     "prop-types": "15.8.1",
-    "typescript": "5.3.2"
+    "typescript": "5.3.3"
   }
 }
