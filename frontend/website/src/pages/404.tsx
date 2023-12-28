@@ -1,21 +1,23 @@
 import * as React from "react";
-import { Link, HeadFC, PageProps } from "gatsby";
+import { Link as Router, HeadFC, PageProps } from "gatsby";
+import { Box, Link } from "@chakra-ui/react";
+import { Header } from "../atoms/elements";
 import SEO from "../molecules/seo";
-import * as styles from "../styles/site.css";
+import Layout from "../organisms/layout";
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
-    <main className={styles.page}>
-      <h1 className={styles.heading}>Page Not Found</h1>
-      <p className={styles.paragraph}>
-        Sorry, we couldn’t find what you were looking for.
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <Layout location={location}>
+      <Header>Page Not Found</Header>
+      <Box mb={4}>Sorry, we couldn’t find what you were looking for.</Box>
+      <Link as={Router} to="/">
+        Go home
+      </Link>
+      .
+    </Layout>
   );
 };
 
 export default NotFoundPage;
 
-export const Head: HeadFC = () => <SEO title="Not Found"/>;
+export const Head: HeadFC = () => <SEO title="Not Found" />;

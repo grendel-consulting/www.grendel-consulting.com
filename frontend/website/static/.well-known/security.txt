@@ -1,0 +1,4 @@
+Contact: mailto:security@grendel-consulting.com
+Expires: 2024-03-31T12:00:00.000Z
+Preferred-Languages: en
+Canonical: https://www.grendel-consulting.com/.well-known/security.txt
