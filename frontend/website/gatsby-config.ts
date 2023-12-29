@@ -21,7 +21,17 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
+        name: BUSINESS.SHORT_NAME,
+        short_name: BUSINESS.SHORT_NAME,
         icon: "./src/images/icon.png",
+        icon_options: {
+          purpose: "any maskable",
+        },
+        background_color: "#FFFFFF",
+        theme_color: "#2C5282",
+        start_url: "/",
+        display: "standalone",
+        lang: "en",
       },
     },
     "gatsby-plugin-mdx",
