@@ -49,7 +49,7 @@ export const Footer = () => {
           <Link
             as={Router}
             key={i}
-            _hover={{ textDecoration: "underline", styleLegalese }}
+            _hover={{ textDecoration: "underline", ...styleLegalese }}
             to={target}
           >
             {copy}
