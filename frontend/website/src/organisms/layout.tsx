@@ -37,7 +37,7 @@ const Layout = ({ location, children }: PageProps) => {
           <Breadcrumb
             location={location}
             fontSize={"xs"}
-            separator={<RxCaretRight color="gray.700" />}
+            separator={<RxCaretRight role="presentation" color="gray.700" />}
           />
           <SkipNavContent />
           {children}
