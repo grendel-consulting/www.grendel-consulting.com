@@ -11,11 +11,11 @@ import {
 } from "@chakra-ui/react";
 
 const Breadcrumb = (props: { location?: Location } & BreadcrumbProps) => {
-  if (location === undefined) {
+  if (props.location === undefined) {
     return false;
   }
 
-  const crumbs = location.pathname.split("/");
+  const crumbs = props.location.pathname.split("/");
   let url = "";
 
   return (
