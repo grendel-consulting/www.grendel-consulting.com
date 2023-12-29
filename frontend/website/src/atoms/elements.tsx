@@ -17,6 +17,7 @@ import {
   Text,
   type TextProps,
   Icon,
+  VisuallyHidden,
 } from "@chakra-ui/react";
 import { BUSINESS, PRINCIPAL } from "../atoms/constants";
 
@@ -108,7 +109,8 @@ export const shortcodes = {
           isExternal
           {...props}
         >
-          {BUSINESS.CONTACT.RECEPTION}
+          {BUSINESS.CONTACT.RECEPTION}{" "}
+          <VisuallyHidden>(opens in new tab)</VisuallyHidden>
         </Link>
       ),
       Privacy: (props: LinkProps) => (
@@ -118,7 +120,8 @@ export const shortcodes = {
           isExternal
           {...props}
         >
-          {BUSINESS.CONTACT.PRIVACY}
+          {BUSINESS.CONTACT.PRIVACY}{" "}
+          <VisuallyHidden>(opens in new tab)</VisuallyHidden>
         </Link>
       ),
       Security: (props: LinkProps) => (
@@ -128,7 +131,8 @@ export const shortcodes = {
           isExternal
           {...props}
         >
-          {BUSINESS.CONTACT.SECURITY}
+          {BUSINESS.CONTACT.SECURITY}{" "}
+          <VisuallyHidden>(opens in new tab)</VisuallyHidden>
         </Link>
       ),
       BookChat: (props: LinkProps) => (
@@ -142,6 +146,7 @@ export const shortcodes = {
           {...props}
         >
           Book a Chat <Icon as={RxCalendar} boxSize={[4, 4, 6, 8]} ml="2" />
+          <VisuallyHidden>(opens in new tab)</VisuallyHidden>
         </Link>
       ),
       Bookings: (props: LinkProps) => (
@@ -150,18 +155,32 @@ export const shortcodes = {
           {...styleLinks}
           isExternal
           {...props}
-        />
+        >
+          {props.children} <VisuallyHidden>(opens in new tab)</VisuallyHidden>
+        </Link>
       ),
     },
     Socials: {
       GitHub: (props: LinkProps) => (
-        <Link href={BUSINESS.SOCIALS.GITHUB} isExternal {...props}>
-          <Icon as={RxGithubLogo} boxSize={[4, 4, 6, 8]} />
+        <Link
+          aria-label="GitHub"
+          href={BUSINESS.SOCIALS.GITHUB}
+          isExternal
+          {...props}
+        >
+          <Icon as={RxGithubLogo} boxSize={[4, 4, 6, 8]} />{" "}
+          <VisuallyHidden>(opens in new tab)</VisuallyHidden>
         </Link>
       ),
       LinkedIn: (props: LinkProps) => (
-        <Link href={BUSINESS.SOCIALS.LINKEDIN} isExternal {...props}>
-          <Icon as={RxLinkedinLogo} boxSize={[4, 4, 6, 8]} />
+        <Link
+          aria-label="LinkedIn"
+          href={BUSINESS.SOCIALS.LINKEDIN}
+          isExternal
+          {...props}
+        >
+          <Icon as={RxLinkedinLogo} boxSize={[4, 4, 6, 8]} />{" "}
+          <VisuallyHidden>(opens in new tab)</VisuallyHidden>
         </Link>
       ),
     },
@@ -182,5 +201,5 @@ export const shortcodes = {
 };
 
 export const Header = (props: HeadingProps) => (
-  <Heading as="h1" color="blue.700" mb={6} {...props} />
+  <Heading as="h1" {...styleBrand} mb={6} {...props} />
 );

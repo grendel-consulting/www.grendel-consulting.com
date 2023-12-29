@@ -16,19 +16,21 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { shortcodes as s } from "../atoms/elements";
 import BrandIcon from "../atoms/brand";
 
+const styleBrand = { color: "blue.700" };
+
 export const Header = () => {
   return (
     <React.Fragment>
       <Flex
         fontSize={["sm", "sm", "xl"]}
-        color="blue.700"
+        {...styleBrand}
         flexWrap="wrap"
         alignItems="center"
         pt={2}
         gap="4"
       >
-        <Link as={Router} color="blue.700" to="/">
-          <BrandIcon boxSize={16} />
+        <Link as={Router} {...styleBrand} to="/">
+          <BrandIcon aria-label="Logo" boxSize={16} />
           <Show above="sm">
             <s.Business.ShortName fontSize="2xl" verticalAlign="middle" />
           </Show>
@@ -40,7 +42,7 @@ export const Header = () => {
         <Menu>
           <MenuButton
             as={IconButton}
-            borderColor="blue.700"
+            borderColor={styleBrand.color}
             aria-label="Navigation"
             icon={<RxHamburgerMenu />}
             variant="outline"

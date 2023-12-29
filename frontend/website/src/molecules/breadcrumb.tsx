@@ -21,7 +21,7 @@ const Breadcrumb = (props: { location?: Location } & BreadcrumbProps) => {
   return (
     <Trail {...props}>
       <BreadcrumbItem>
-        <BreadcrumbLink as={Router} to="/">
+        <BreadcrumbLink as={Router} aria-label="Home" to="/">
           <Icon as={RxHome} mt={1} />
         </BreadcrumbLink>
       </BreadcrumbItem>
