@@ -40,7 +40,7 @@
     "@types/mdx": "2.0.12",
     "@types/node": "20.11.30",
     "@types/react": "18.2.73",
-    "@types/react-dom": "18.2.22",
+    "@types/react-dom": "18.2.23",
     "eslint": "8.57.0",
     "eslint-plugin-flowtype": "8.0.3",
     "gatsby-plugin-pnpm": "1.2.10",
