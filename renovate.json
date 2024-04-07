@@ -9,6 +9,9 @@
       "automerge": true
     }
   ],
+  "pre-commit": {
+    "enabled": true
+  },
   "timezone": "Europe/London",
   "vulnerabilityAlerts": {
     "labels": ["security"],
