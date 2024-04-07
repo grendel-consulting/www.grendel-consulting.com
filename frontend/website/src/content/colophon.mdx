@@ -9,7 +9,7 @@ I built this website, primarily to explore a collection of Web 2.0 techniques an
 
 [Gatsby](https://www.gatsbyjs.com/) provides me with most of the heavy lifting - it's a static site generator based around [React](https://react.dev/) that handles server-side rendering, routing, access to features through plugins, and other optimisations. I'm using it with [Typescript](https://www.typescriptlang.org/) (and a sprinkling of [Zod](https://zod.dev/)) to shift failures as early as possible, and leaning on [Chakra-UI](https://chakra-ui.com/) to simplify and centralise components and styling. Content is created using [MDX](https://mdxjs.com/), a Markdown variant, again separating code from content.
 
-Developer experience is key, since I want to focus time on value, and so I use [PNPM](https://pnpm.io/) and [Turbo](https://turbo.build/repo) for a rock solid monorepo and build setup, complete with tooling such as linters, formatters, testing, and other fail-fast signals. 
+Developer experience is key, since I want to focus time on value, and so I use [PNPM](https://pnpm.io/) and [Turbo](https://turbo.build/repo) for a rock solid monorepo and build setup, complete with tooling such as linters, formatters, testing, and other fail-fast signals.
 
 All of the infrastructure is defined in [CDKTF](https://developer.hashicorp.com/terraform/cdktf), a Typescript wrapper over [Terraform](https://developer.hashicorp.com/terraform), and deployed into an [<dfn id="aws">Amazon Web Services</dfn>](https://aws.amazon.com/) (<abbr>AWS</abbr>) Account to host the website. It creates a CloudFront Distribution that serves content from an isolated S3 storage bucket, with hardened security headers and apex redirection.
 
@@ -17,7 +17,7 @@ Deployment is through <abbr title="Continuous Integration and Continuous Deploym
 
 ## Content
 
-Using MDX for writing and editing my content enables a distraction-free writing approach, and my content management system is deliberately simple: files and folders, with minimal frontmatter to translate from that to a cohesive visitor experience. 
+Using MDX for writing and editing my content enables a distraction-free writing approach, and my content management system is deliberately simple: files and folders, with minimal frontmatter to translate from that to a cohesive visitor experience.
 
 In places, I use [Microformats](https://microformats.org/wiki/Main_Page) and other semantic enrichment.
 
