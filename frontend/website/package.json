@@ -37,10 +37,10 @@
     "zod": "3.22.4"
   },
   "devDependencies": {
-    "@types/mdx": "2.0.12",
+    "@types/mdx": "2.0.13",
     "@types/node": "20.12.7",
-    "@types/react": "18.2.75",
-    "@types/react-dom": "18.2.24",
+    "@types/react": "18.2.77",
+    "@types/react-dom": "18.2.25",
     "eslint": "8.57.0",
     "eslint-plugin-flowtype": "8.0.3",
     "gatsby-plugin-pnpm": "1.2.10",
