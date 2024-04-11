@@ -11,6 +11,6 @@
     "eslint-plugin-flowtype": "8.0.3"
   },
   "devDependencies": {
-    "typescript": "5.4.4"
+    "typescript": "5.4.5"
   }
 }
