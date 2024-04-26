@@ -48,9 +48,9 @@ export const BUSINESS = Business.parse({
     GITHUB: "https://github.com/grendel-consulting/",
   },
   OFFICE: {
-    STREET_ADDRESS: "25 Victoria Gardens",
+    STREET_ADDRESS: "1 Consort Way",
     LOCALITY: "Burgess Hill",
-    POSTAL_CODE: "RH15 9NB",
+    POSTAL_CODE: "RH15 9TJ",
     COUNTRY_NAME: "United Kingdom",
     COUNTRY_CODE: "UK",
   },
