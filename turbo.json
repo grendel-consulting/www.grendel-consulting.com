@@ -1,16 +1,26 @@
 {
   "$schema": "https://turborepo.org/schema.json",
-  "globalEnv": ["STAGING_AWS_ACCOUNT", "PRODUCTION_AWS_ACCOUNT"],
-  "pipeline": {
+  "globalEnv": [
+    "STAGING_AWS_ACCOUNT",
+    "PRODUCTION_AWS_ACCOUNT"
+  ],
+  "tasks": {
     "build": {
-      "dependsOn": ["lint"],
-      "outputs": ["build/**"]
+      "dependsOn": [
+        "lint"
+      ],
+      "outputs": [
+        "build/**"
+      ]
     },
     "lint": {},
     "start": {},
     "synth": {},
     "ci": {
-      "dependsOn": ["build", "synth"]
+      "dependsOn": [
+        "build",
+        "synth"
+      ]
     }
   }
 }
