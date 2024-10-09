@@ -32,10 +32,10 @@ const Breadcrumb = (props: { location?: Location } & BreadcrumbProps) => {
           url += `/${crumb}`;
 
           return (
-            <BreadcrumbItem>
+            <BreadcrumbItem key={`crumb-${crumb}-${i}`}>
               <BreadcrumbLink
                 as={Router}
-                key={`crumb-${crumb}-${i}`}
+                
                 to={url}
                 isCurrentPage={i == crumbs.length - 1}
               >
