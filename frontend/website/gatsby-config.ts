@@ -17,7 +17,28 @@ const config: GatsbyConfig = {
       },
     },
     "gatsby-plugin-image",
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+        {
+          allSitePage(filter: { pluginCreator: { name: { eq: "gatsby-plugin-mdx" }}}) {
+            nodes {
+              path
+              pageContext 
+            }
+          }
+        }
+        `,
+        resolveSiteUrl: () => BUSINESS.WEBSITE,
+        serialize: (page:any) => {
+          return {
+            url: page.path,
+            ...( page.pageContext.frontmatter?.modified && {lastmod: page.pageContext.frontmatter.modified} ),
+          }
+        },
+      },
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
