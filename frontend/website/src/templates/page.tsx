@@ -2,7 +2,7 @@ import * as React from "react";
 import { graphql, HeadFC, PageProps } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import { elements, Header, shortcodes } from "../atoms/elements";
-import SEO from "../molecules/seo";
+import Seo from "../molecules/seo";
 import Layout from "../organisms/layout";
 
 type DataProps = {
@@ -43,5 +43,5 @@ export const query = graphql`
 `;
 
 export const Head: HeadFC<DataProps> = ({ data }) => (
-  <SEO title={data.mdx?.frontmatter?.title} />
+  <Seo title={data.mdx?.frontmatter?.title} />
 );

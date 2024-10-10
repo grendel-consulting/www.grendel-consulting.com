@@ -7,7 +7,7 @@ type SeoProps = {
   pathname?: string;
   children?: React.ReactNode;
 };
-const SEO = ({ title, description, pathname, children }: SeoProps) => {
+const Seo = ({ title, description, pathname, children }: SeoProps) => {
   const {
     title: defaultTitle,
     description: defaultDescription,
@@ -15,9 +15,9 @@ const SEO = ({ title, description, pathname, children }: SeoProps) => {
   } = useSiteMetadata();
 
   const seo = {
-    title: title || defaultTitle,
-    description: description || defaultDescription,
-    url: `${siteUrl}${pathname || ``}`,
+    title: title ?? defaultTitle,
+    description: description ?? defaultDescription,
+    url: `${siteUrl}${pathname ?? ""}`,
   };
 
   return (
@@ -30,4 +30,4 @@ const SEO = ({ title, description, pathname, children }: SeoProps) => {
   );
 };
 
-export default SEO;
+export default Seo;

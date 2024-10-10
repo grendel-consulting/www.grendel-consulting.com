@@ -48,7 +48,7 @@ export const Footer = () => {
         }).map(([copy, target], i) => (
           <Link
             as={Router}
-            key={i}
+            key={target}
             _hover={{ textDecoration: "underline", ...styleLegalese }}
             to={target}
           >

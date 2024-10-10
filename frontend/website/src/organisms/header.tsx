@@ -20,49 +20,47 @@ const styleBrand = { color: "blue.700" };
 
 export const Header = () => {
   return (
-    <React.Fragment>
-      <Flex
-        fontSize={["sm", "sm", "xl"]}
-        {...styleBrand}
-        flexWrap="wrap"
-        alignItems="center"
-        pt={2}
-        gap="4"
-      >
-        <Link as={Router} {...styleBrand} to="/">
-          <BrandIcon aria-label="Logo" boxSize={16} />
-          <Show above="sm">
-            <s.Business.ShortName fontSize="2xl" verticalAlign="middle" />
-          </Show>
-        </Link>
-        <Spacer />
+    <Flex
+      fontSize={["sm", "sm", "xl"]}
+      {...styleBrand}
+      flexWrap="wrap"
+      alignItems="center"
+      pt={2}
+      gap="4"
+    >
+      <Link as={Router} {...styleBrand} to="/">
+        <BrandIcon aria-label="Logo" boxSize={16} />
         <Show above="sm">
-          <s.Business.Contact.BookChat />
+          <s.Business.ShortName fontSize="2xl" verticalAlign="middle" />
         </Show>
-        <Menu>
-          <MenuButton
-            as={IconButton}
-            borderColor={styleBrand.color}
-            aria-label="Navigation"
-            icon={<RxHamburgerMenu />}
-            variant="outline"
-          />
-          <MenuList>
-            {Object.entries({
-              "Our Services": "/services",
-              "Ways of Working": "/ways-of-working",
-              Experiments: "/experiments",
-            }).map(([copy, target], i) => (
-              <MenuItem as={Router} key={i} to={target}>
-                {copy}
-              </MenuItem>
-            ))}
-            <Show below="md">
-              <s.Business.Contact.BookChat />
-            </Show>
-          </MenuList>
-        </Menu>
-      </Flex>
-    </React.Fragment>
+      </Link>
+      <Spacer />
+      <Show above="sm">
+        <s.Business.Contact.BookChat />
+      </Show>
+      <Menu>
+        <MenuButton
+          as={IconButton}
+          borderColor={styleBrand.color}
+          aria-label="Navigation"
+          icon={<RxHamburgerMenu />}
+          variant="outline"
+        />
+        <MenuList>
+          {Object.entries({
+            "Our Services": "/services",
+            "Ways of Working": "/ways-of-working",
+            Experiments: "/experiments",
+          }).map(([copy, target], i) => (
+            <MenuItem as={Router} key={target} to={target}>
+              {copy}
+            </MenuItem>
+          ))}
+          <Show below="md">
+            <s.Business.Contact.BookChat />
+          </Show>
+        </MenuList>
+      </Menu>
+    </Flex>
   );
 };
