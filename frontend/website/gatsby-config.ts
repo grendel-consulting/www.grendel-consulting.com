@@ -84,7 +84,7 @@ const config: GatsbyConfig = {
     "gatsby-transformer-remark",
     "gatsby-transformer-sharp",
   ],
-  trailingSlash: 'never',
+  trailingSlash: 'always',
 };
 
 export default config;
