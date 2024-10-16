@@ -267,6 +267,11 @@ export class SpaWebsite extends TerraformStack {
               value: "same-site",
               override: true,
             },
+            {
+              header: "Server",
+              value: "Obscurity",
+              override: true,
+            },
           ],
         },
       },
