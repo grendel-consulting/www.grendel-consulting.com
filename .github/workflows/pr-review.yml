@@ -6,8 +6,8 @@ on:
       - main
 
 permissions:
-    contents: read  
-      
+    contents: read
+
 jobs:
   prepare:
     name: try-build

@@ -25,7 +25,7 @@ const config: GatsbyConfig = {
           allSitePage(filter: { pluginCreator: { name: { eq: "gatsby-plugin-mdx" }}}) {
             nodes {
               path
-              pageContext 
+              pageContext
             }
           }
         }
