@@ -9,3 +9,4 @@ src/gatsby-types.d.ts
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+/.features-gen/
