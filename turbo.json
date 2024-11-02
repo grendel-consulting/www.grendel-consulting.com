@@ -2,7 +2,8 @@
   "$schema": "https://turborepo.org/schema.json",
   "globalEnv": [
     "STAGING_AWS_ACCOUNT",
-    "PRODUCTION_AWS_ACCOUNT"
+    "PRODUCTION_AWS_ACCOUNT",
+    "CI"
   ],
   "tasks": {
     "build": {

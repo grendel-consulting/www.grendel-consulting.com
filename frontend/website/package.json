@@ -37,6 +37,7 @@
     "zod": "3.23.8"
   },
   "devDependencies": {
+    "@playwright/test": "1.48.2",
     "@types/mdx": "2.0.13",
     "@types/node": "20.17.5",
     "@types/react": "18.3.12",
@@ -44,6 +45,7 @@
     "eslint": "8.57.1",
     "eslint-plugin-flowtype": "8.0.3",
     "gatsby-plugin-pnpm": "1.2.10",
+    "playwright-bdd": "7.5.0",
     "prop-types": "15.8.1",
     "typescript": "5.6.3"
   }
