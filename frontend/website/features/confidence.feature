@@ -1,6 +1,6 @@
-Feature: Live website serving content
+Feature: As a visitor I want to visit the website in order to see what the business offers
 
-    Scenario: Ping website homepage
-        Given I open url "https://www.grendel-consulting.com"
-        When I click link "Home"
+    Scenario: Visit the Domain
+        Given I have an open browser
+        When I navigate to "https://www.grendel-consulting.com"
         Then I see in title "Building and fixing teams and processes"
