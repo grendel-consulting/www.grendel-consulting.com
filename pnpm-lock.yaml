@@ -18,6 +18,7 @@ overrides:
   body-parser@<1.20.3: '>=1.20.3'
   braces@<3.0.3: '>=3.0.3'
   cookie@<0.7.0: '>=0.7.0'
+  cross-spawn@<7.0.5: '>=7.0.5'
   deep-equal: npm:@socketregistry/deep-equal@^1
   define-properties: npm:@socketregistry/define-properties@^1
   es-define-property: npm:@socketregistry/es-define-property@^1
@@ -1938,8 +1939,8 @@ packages:
     resolution: {integrity: sha512-x6W5FZJwngd3UqOA0TXucXuD/RdGm4NHvnDYC2topSlfyA2vtTff9lcXpuQqzi/TxxlHEfYc0toRA+VDQSdfxw==}
     engines: {node: '>=18.20.4'}
 
-  '@socketregistry/side-channel@1.0.5':
-    resolution: {integrity: sha512-5UgOtX5i0k5WBmNMSHvCoxC3XbRYFJwhAyN94LA2MSvBc/RGHuyjtKXY4j05LUwM/+UpRG5IqLWU/siyp3k+9w==}
+  '@socketregistry/side-channel@1.0.6':
+    resolution: {integrity: sha512-s5DMU7a192OUMvIU3xjfKCu/kpGuKo0hWtCD6h7fhm0CcHS4NqXeTS5+DjDuRTuUowc4PQXzHRA0OZdKuaRAWQ==}
     engines: {node: '>=18.20.4'}
 
   '@socketregistry/string.prototype.includes@1.0.5':
@@ -3029,12 +3030,8 @@ packages:
   cross-fetch@3.1.5:
     resolution: {integrity: sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==}
 
-  cross-spawn@6.0.5:
-    resolution: {integrity: sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ==}
-    engines: {node: '>=4.8'}
-
-  cross-spawn@7.0.3:
-    resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
+  cross-spawn@7.0.6:
+    resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
 
   crypto-random-string@2.0.0:
@@ -5313,9 +5310,6 @@ packages:
   next-tick@1.1.0:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
 
-  nice-try@1.0.5:
-    resolution: {integrity: sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==}
-
   nlcst-to-string@2.0.4:
     resolution: {integrity: sha512-3x3jwTd6UPG7vi5k4GEzvxJ5rDA7hVUIRNHPblKuMVP9Z3xmlsd9cgLcpAMkc5uPOBna82EeshROFhsPkbnTZg==}
 
@@ -5563,10 +5557,6 @@ packages:
   path-is-absolute@1.0.1:
     resolution: {integrity: sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==}
     engines: {node: '>=0.10.0'}
-
-  path-key@2.0.1:
-    resolution: {integrity: sha512-fEHGKCSmUSDPv4uoj8AlD+joPlq3peND+HRYyxFz4KPw4z926S/b8rIuFs2FYJg3BwsxJf6A9/3eIdLaYC+9Dw==}
-    engines: {node: '>=4'}
 
   path-key@3.1.1:
     resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
@@ -6338,17 +6328,9 @@ packages:
     resolution: {integrity: sha512-KyLTWwgcR9Oe4d9HwCwNM2l7+J0dUQwn/yf7S0EnTtb0eVS4RxO0eUSvxPtzT4F3SY+C4K6fqdv/DO27sJ/v/w==}
     engines: {node: '>=14.15.0'}
 
-  shebang-command@1.2.0:
-    resolution: {integrity: sha512-EV3L1+UQWGor21OmnvojK36mhg+TyIKDh3iFBKBohr5xeXIhNBcx8oWdgkTEEQ+BEFFYdLRuqMfd5L84N1V5Vg==}
-    engines: {node: '>=0.10.0'}
-
   shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
     engines: {node: '>=8'}
-
-  shebang-regex@1.0.0:
-    resolution: {integrity: sha512-wpoSFAxys6b2a2wHZ1XpDSgD7N9iVjg29Ph9uV/uaP9Ex/KXlkTZTeddxDPSYQpgvzKLGJke2UU0AzoGCjNIvQ==}
-    engines: {node: '>=0.10.0'}
 
   shebang-regex@3.0.0:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
@@ -9377,7 +9359,7 @@ snapshots:
 
   '@socketregistry/safer-buffer@1.0.5': {}
 
-  '@socketregistry/side-channel@1.0.5': {}
+  '@socketregistry/side-channel@1.0.6': {}
 
   '@socketregistry/string.prototype.includes@1.0.5': {}
 
@@ -9596,7 +9578,7 @@ snapshots:
 
   '@types/yoga-layout@1.9.2': {}
 
-  '@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3)':
+  '@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3)':
     dependencies:
       '@eslint-community/regexpp': 4.6.2
       '@typescript-eslint/parser': 5.62.0(eslint@8.57.1)(typescript@5.6.3)
@@ -10617,15 +10599,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  cross-spawn@6.0.5:
-    dependencies:
-      nice-try: 1.0.5
-      path-key: 2.0.1
-      semver: 7.6.3
-      shebang-command: 1.2.0
-      which: 1.3.1
-
-  cross-spawn@7.0.3:
+  cross-spawn@7.0.6:
     dependencies:
       path-key: 3.1.1
       shebang-command: 2.0.0
@@ -11068,7 +11042,7 @@ snapshots:
 
   eslint-config-react-app@6.0.0(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.6.3))(eslint@7.32.0)(typescript@5.6.3))(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.6.3))(babel-eslint@10.1.0(eslint@8.57.1))(eslint-plugin-flowtype@5.10.0(eslint@7.32.0))(eslint-plugin-import@2.27.5(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.6.3))(eslint@7.32.0))(eslint-plugin-jsx-a11y@6.10.2(eslint@7.32.0))(eslint-plugin-react-hooks@4.6.0(eslint@7.32.0))(eslint-plugin-react@7.32.2(eslint@7.32.0))(eslint@7.32.0)(typescript@5.6.3):
     dependencies:
-      '@typescript-eslint/eslint-plugin': 5.62.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3)
+      '@typescript-eslint/eslint-plugin': 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3)
       '@typescript-eslint/parser': 5.62.0(eslint@8.57.1)(typescript@5.6.3)
       babel-eslint: 10.1.0(eslint@8.57.1)
       confusing-browser-globals: 1.0.11
@@ -11228,7 +11202,7 @@ snapshots:
       '@humanwhocodes/config-array': 0.5.0
       ajv: 6.12.6
       chalk: 4.1.2
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       debug: 4.3.7
       doctrine: 3.0.0
       enquirer: 2.3.6
@@ -11278,7 +11252,7 @@ snapshots:
       '@ungap/structured-clone': 1.2.0
       ajv: 6.12.6
       chalk: 4.1.2
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       debug: 4.3.7
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
@@ -11384,7 +11358,7 @@ snapshots:
 
   execa@5.1.1:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       get-stream: 6.0.1
       human-signals: 2.1.0
       is-stream: 2.0.1
@@ -11396,7 +11370,7 @@ snapshots:
 
   execa@8.0.1:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       get-stream: 8.0.1
       human-signals: 5.0.0
       is-stream: 3.0.0
@@ -12046,7 +12020,7 @@ snapshots:
       '@pmmmwh/react-refresh-webpack-plugin': 0.5.10(react-refresh@0.14.0)(type-fest@0.21.3)(webpack@5.95.0(esbuild@0.24.0))
       '@sigmacomputing/babel-plugin-lodash': 3.3.5
       '@types/http-proxy': 1.17.11
-      '@typescript-eslint/eslint-plugin': 5.62.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3)
+      '@typescript-eslint/eslint-plugin': 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3)
       '@typescript-eslint/parser': 5.62.0(eslint@8.57.1)(typescript@5.6.3)
       '@vercel/webpack-asset-relocator-loader': 1.7.3
       acorn-loose: 8.3.0
@@ -13982,8 +13956,6 @@ snapshots:
 
   next-tick@1.1.0: {}
 
-  nice-try@1.0.5: {}
-
   nlcst-to-string@2.0.4: {}
 
   no-case@3.0.4:
@@ -14211,7 +14183,7 @@ snapshots:
   password-prompt@1.1.2:
     dependencies:
       ansi-escapes: 3.2.0
-      cross-spawn: 6.0.5
+      cross-spawn: 7.0.6
 
   path-case@3.0.4:
     dependencies:
@@ -14223,8 +14195,6 @@ snapshots:
   path-exists@4.0.0: {}
 
   path-is-absolute@1.0.1: {}
-
-  path-key@2.0.1: {}
 
   path-key@3.1.1: {}
 
@@ -14579,7 +14549,7 @@ snapshots:
 
   qs@6.13.0:
     dependencies:
-      side-channel: '@socketregistry/side-channel@1.0.5'
+      side-channel: '@socketregistry/side-channel@1.0.6'
 
   query-string@6.14.1:
     dependencies:
@@ -14631,7 +14601,7 @@ snapshots:
       address: 1.2.2
       browserslist: 4.24.0
       chalk: 4.1.2
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       detect-port-alt: 1.1.6
       escape-string-regexp: 4.0.0
       filesize: 8.0.7
@@ -15098,15 +15068,9 @@ snapshots:
       tar-fs: 3.0.4
       tunnel-agent: 0.6.0
 
-  shebang-command@1.2.0:
-    dependencies:
-      shebang-regex: 1.0.0
-
   shebang-command@2.0.0:
     dependencies:
       shebang-regex: 3.0.0
-
-  shebang-regex@1.0.0: {}
 
   shebang-regex@3.0.0: {}
 
