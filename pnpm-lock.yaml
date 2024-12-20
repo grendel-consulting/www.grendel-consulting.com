@@ -214,8 +214,8 @@ importers:
         specifier: 1.2.10
         version: 1.2.10(gatsby@5.14.0(babel-eslint@10.1.0(eslint@8.57.1))(esbuild@0.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.7.2))
       playwright-bdd:
-        specifier: 8.0.0
-        version: 8.0.0(@cucumber/message-streams@4.0.1(@cucumber/messages@27.0.2))(@playwright/test@1.49.1)
+        specifier: 8.0.1
+        version: 8.0.1(@cucumber/message-streams@4.0.1(@cucumber/messages@27.0.2))(@playwright/test@1.49.1)
       prop-types:
         specifier: 15.8.1
         version: 15.8.1
@@ -5611,8 +5611,8 @@ packages:
   platform@1.3.6:
     resolution: {integrity: sha512-fnWVljUchTro6RiCFvCXBbNhJc2NijN7oIQxbwsyL0buWJPG85v81ehlHI9fXrJsMNgTofEoWIQeClKpgxFLrg==}
 
-  playwright-bdd@8.0.0:
-    resolution: {integrity: sha512-lj9Fs2Kvbefms7Q6xTiZUVy5krGj3cWtddbMVhzXZtE+NR4dzZWK03SOK6f3o0poEgB3Vqypm0/CxwwT6oMYfA==}
+  playwright-bdd@8.0.1:
+    resolution: {integrity: sha512-45r8a3QFm6iteElEWIf7n5FpiT8quRehkJT2aMDwgY9BaYNodhA1lO/DGqAUXcjXSxsMX1bCKMegVbWXCx3KFQ==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -14221,7 +14221,7 @@ snapshots:
 
   platform@1.3.6: {}
 
-  playwright-bdd@8.0.0(@cucumber/message-streams@4.0.1(@cucumber/messages@27.0.2))(@playwright/test@1.49.1):
+  playwright-bdd@8.0.1(@cucumber/message-streams@4.0.1(@cucumber/messages@27.0.2))(@playwright/test@1.49.1):
     dependencies:
       '@cucumber/cucumber-expressions': 18.0.1
       '@cucumber/gherkin': 30.0.4
