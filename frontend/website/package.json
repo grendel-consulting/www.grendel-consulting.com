@@ -23,7 +23,7 @@
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.0",
     "@mdx-js/react": "3.1.0",
-    "framer-motion": "12.4.1",
+    "framer-motion": "12.4.2",
     "gatsby": "5.14.1",
     "gatsby-plugin-image": "3.14.0",
     "gatsby-plugin-manifest": "5.14.0",
