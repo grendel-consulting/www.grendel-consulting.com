@@ -42,7 +42,7 @@
     "@axe-core/playwright": "4.10.1",
     "@playwright/test": "1.50.1",
     "@types/mdx": "2.0.13",
-    "@types/node": "22.13.8",
+    "@types/node": "22.13.9",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
     "eslint": "8.57.1",
