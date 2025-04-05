@@ -50,7 +50,7 @@
     "gatsby-plugin-pnpm": "1.2.10",
     "playwright-bdd": "8.2.1",
     "prop-types": "15.8.1",
-    "typescript": "5.8.2"
+    "typescript": "5.8.3"
   },
   "pnpm": {
     "arraybuffer.prototype.slice": "npm:@socketregistry/arraybuffer.prototype.slice@^1",
