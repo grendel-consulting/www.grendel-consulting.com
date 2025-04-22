@@ -227,10 +227,10 @@ importers:
     dependencies:
       '@cdktf/provider-aws':
         specifier: 19.60.1
-        version: 19.60.1(cdktf@0.20.11(constructs@10.4.2))(constructs@10.4.2)
+        version: 19.60.1(cdktf@0.20.12(constructs@10.4.2))(constructs@10.4.2)
       cdktf:
-        specifier: 0.20.11
-        version: 0.20.11(constructs@10.4.2)
+        specifier: 0.20.12
+        version: 0.20.12(constructs@10.4.2)
       constructs:
         specifier: 10.4.2
         version: 10.4.2
@@ -2714,8 +2714,8 @@ packages:
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
 
-  cdktf@0.20.11:
-    resolution: {integrity: sha512-YoubhokJ8s60WNrP2+cpQinb0DdMXlaFFDnPPv2A/tcRkzkwO9dWuMiXhhA0XlBJ1qA5pibaonu9Cc4B9JgKuQ==}
+  cdktf@0.20.12:
+    resolution: {integrity: sha512-ZBg2gA3Uw0WvGFlgrY1uxo6QHWn+ZdHiDkZQyOsTBl68k62UlaV8K7RR51d0E/amQG/CjtKOJr5XPFFAcOq0VA==}
     peerDependencies:
       constructs: ^10.3.0
     bundledDependencies:
@@ -8119,9 +8119,9 @@ snapshots:
 
   '@builder.io/partytown@0.7.6': {}
 
-  '@cdktf/provider-aws@19.60.1(cdktf@0.20.11(constructs@10.4.2))(constructs@10.4.2)':
+  '@cdktf/provider-aws@19.60.1(cdktf@0.20.12(constructs@10.4.2))(constructs@10.4.2)':
     dependencies:
-      cdktf: 0.20.11(constructs@10.4.2)
+      cdktf: 0.20.12(constructs@10.4.2)
       constructs: 10.4.2
 
   '@chakra-ui/anatomy@2.3.6': {}
@@ -10220,7 +10220,7 @@ snapshots:
 
   ccount@2.0.1: {}
 
-  cdktf@0.20.11(constructs@10.4.2):
+  cdktf@0.20.12(constructs@10.4.2):
     dependencies:
       constructs: 10.4.2
 
@@ -11001,7 +11001,7 @@ snapshots:
       confusing-browser-globals: 1.0.11
       eslint: 7.32.0
       eslint-plugin-flowtype: 5.10.0(eslint@7.32.0)
-      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.8.3))(eslint@8.57.1)
+      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.57.1)
       eslint-plugin-react: 7.32.2(eslint@8.57.1)
       eslint-plugin-react-hooks: 4.6.0(eslint@8.57.1)
@@ -11022,7 +11022,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.8.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.8.3))(eslint-import-resolver-node@0.3.7)(eslint@8.57.1):
+  eslint-module-utils@2.8.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-node@0.3.7)(eslint@8.57.1):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
@@ -11046,7 +11046,7 @@ snapshots:
       lodash: 4.17.21
       string-natural-compare: 3.0.1
 
-  eslint-plugin-import@2.27.5(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.8.3))(eslint@8.57.1):
+  eslint-plugin-import@2.27.5(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1):
     dependencies:
       array-includes: '@socketregistry/array-includes@1.0.5'
       array.prototype.flat: '@socketregistry/array.prototype.flat@1.0.5'
@@ -11055,7 +11055,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.57.1
       eslint-import-resolver-node: 0.3.7
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.8.3))(eslint-import-resolver-node@0.3.7)(eslint@8.57.1)
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-node@0.3.7)(eslint@8.57.1)
       has: '@socketregistry/has@1.0.5'
       is-core-module: '@socketregistry/is-core-module@1.0.5'
       is-glob: 4.0.3
@@ -12018,7 +12018,7 @@ snapshots:
       eslint: 7.32.0
       eslint-config-react-app: 6.0.0(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.8.3))(eslint@7.32.0)(typescript@5.8.3))(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.8.3))(babel-eslint@10.1.0(eslint@8.57.1))(eslint-plugin-flowtype@5.10.0(eslint@7.32.0))(eslint-plugin-import@2.27.5(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.8.3))(eslint@7.32.0))(eslint-plugin-jsx-a11y@6.10.2(eslint@7.32.0))(eslint-plugin-react-hooks@4.6.0(eslint@7.32.0))(eslint-plugin-react@7.32.2(eslint@7.32.0))(eslint@7.32.0)(typescript@5.8.3)
       eslint-plugin-flowtype: 5.10.0(eslint@7.32.0)
-      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.8.3))(eslint@8.57.1)
+      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.57.1)
       eslint-plugin-react: 7.32.2(eslint@8.57.1)
       eslint-plugin-react-hooks: 4.6.0(eslint@8.57.1)
