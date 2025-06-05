@@ -228,8 +228,8 @@ importers:
   infrastructure/static-site:
     dependencies:
       '@cdktf/provider-aws':
-        specifier: 19.65.1
-        version: 19.65.1(cdktf@0.21.0(constructs@10.4.2))(constructs@10.4.2)
+        specifier: 20.0.0
+        version: 20.0.0(cdktf@0.21.0(constructs@10.4.2))(constructs@10.4.2)
       cdktf:
         specifier: 0.21.0
         version: 0.21.0(constructs@10.4.2)
@@ -999,12 +999,12 @@ packages:
     deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     hasBin: true
 
-  '@cdktf/provider-aws@19.65.1':
-    resolution: {integrity: sha512-pUvO9fYAgyc4MreWOZWkzz/lalxOvIAS2YEvBjIadJVqCUEiNN5EDWu5ofBp9Y1k+ncHzl3K6oPgBeYQYJz5kw==}
-    engines: {node: '>= 18.12.0'}
+  '@cdktf/provider-aws@20.0.0':
+    resolution: {integrity: sha512-0HqghxNT8Vhbx/FPB237IqCVMbGlAsIra6LKt3bGGAKA+59tMCx0TtaPpy6AM6o9dS30A+UpewTw4D3NbTuYMA==}
+    engines: {node: '>= 20.9.0'}
     peerDependencies:
-      cdktf: ^0.20.0
-      constructs: ^10.3.0
+      cdktf: ^0.21.0
+      constructs: ^10.4.2
 
   '@chakra-ui/anatomy@2.3.6':
     resolution: {integrity: sha512-TjmjyQouIZzha/l8JxdBZN1pKZTj7sLpJ0YkFnQFyqHcbfWggW9jKWzY1E0VBnhtFz/xF3KC6UAVuZVSJx+y0g==}
@@ -8214,7 +8214,7 @@ snapshots:
 
   '@builder.io/partytown@0.7.6': {}
 
-  '@cdktf/provider-aws@19.65.1(cdktf@0.21.0(constructs@10.4.2))(constructs@10.4.2)':
+  '@cdktf/provider-aws@20.0.0(cdktf@0.21.0(constructs@10.4.2))(constructs@10.4.2)':
     dependencies:
       cdktf: 0.21.0(constructs@10.4.2)
       constructs: 10.4.2
