@@ -185,8 +185,8 @@ importers:
         specifier: 5.5.0
         version: 5.5.0(react@18.3.1)
       zod:
-        specifier: 3.25.51
-        version: 3.25.51
+        specifier: 3.25.57
+        version: 3.25.57
     devDependencies:
       '@axe-core/playwright':
         specifier: 4.10.2
@@ -237,8 +237,8 @@ importers:
         specifier: 10.4.2
         version: 10.4.2
       zod:
-        specifier: 3.25.51
-        version: 3.25.51
+        specifier: 3.25.57
+        version: 3.25.57
     devDependencies:
       '@types/jest':
         specifier: 29.5.14
@@ -7300,8 +7300,8 @@ packages:
     engines: {node: '>=4.0.0'}
     deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
-  zod@3.25.51:
-    resolution: {integrity: sha512-TQSnBldh+XSGL+opiSIq0575wvDPqu09AqWe1F7JhUMKY+M91/aGlK4MhpVNO7MgYfHcVCB1ffwAUTJzllKJqg==}
+  zod@3.25.57:
+    resolution: {integrity: sha512-6tgzLuwVST5oLUxXTmBqoinKMd3JeesgbgseXeFasKKj8Q1FCZrHnbqJOyiEvr4cVAlbug+CgIsmJ8cl/pU5FA==}
 
   zwitch@1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
@@ -16075,7 +16075,7 @@ snapshots:
       read: 1.0.7
       strip-ansi: 5.2.0
 
-  zod@3.25.51: {}
+  zod@3.25.57: {}
 
   zwitch@1.0.5: {}
 
