@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "4.10.2",
-    "@playwright/test": "1.53.1",
+    "@playwright/test": "1.53.2",
     "@types/mdx": "2.0.13",
     "@types/node": "22.15.34",
     "@types/react": "19.1.8",
