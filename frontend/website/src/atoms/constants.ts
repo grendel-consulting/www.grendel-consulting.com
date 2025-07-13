@@ -1,21 +1,20 @@
-import { z } from "zod";
+import { z } from "zod/mini";
 
-const Business = z
-  .object({
+const Business = z.readonly(z.object({
     LEGAL_NAME: z.string(),
     SHORT_NAME: z.string(),
     PURPOSE: z.string(),
     TAGLINE: z.string(),
-    WEBSITE: z.string().url(),
+    WEBSITE: z.url(),
     CONTACT: z.object({
-      RECEPTION: z.string().email(),
-      PRIVACY: z.string().email(),
-      SECURITY: z.string().email(),
-      BOOKINGS: z.string().url(),
+      RECEPTION: z.email(),
+      PRIVACY: z.email(),
+      SECURITY: z.email(),
+      BOOKINGS: z.url(),
     }),
     SOCIALS: z.object({
-      LINKEDIN: z.string().url(),
-      GITHUB: z.string().url(),
+      LINKEDIN: z.url(),
+      GITHUB: z.url(),
     }),
     OFFICE: z.object({
       STREET_ADDRESS: z.string(),
@@ -27,8 +26,7 @@ const Business = z
     JURISDICTION: z.string(),
     REGISTRATION: z.string(),
     FOUNDING: z.string(),
-  })
-  .readonly();
+  }));
 
 export const BUSINESS = Business.parse({
   LEGAL_NAME: "Grendel Consulting Limited",
@@ -61,11 +59,9 @@ export const BUSINESS = Business.parse({
 
 export type Business = z.infer<typeof Business>;
 
-const Principal = z
-  .object({
+const Principal = z.readonly(z.object({
     FULL_NAME: z.string(),
-  })
-  .readonly();
+  }));
 
 export const PRINCIPAL = Principal.parse({
   FULL_NAME: "James Ramirez",
