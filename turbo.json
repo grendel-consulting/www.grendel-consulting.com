@@ -1,27 +1,35 @@
 {
-  "$schema": "https://turborepo.org/schema.json",
-  "globalEnv": [
-    "STAGING_AWS_ACCOUNT",
-    "PRODUCTION_AWS_ACCOUNT",
-    "CI"
-  ],
+  "$schema": "https://turbo.build/schema.json",
+  "globalEnv": ["STAGING_AWS_ACCOUNT", "PRODUCTION_AWS_ACCOUNT", "CI"],
+  "ui": "tui",
   "tasks": {
     "build": {
-      "dependsOn": [
-        "lint"
-      ],
-      "outputs": [
-        "build/**"
-      ]
+      "dependsOn": ["^build", "lint", "check-types"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": ["dist/**"]
+    },
+    "check-types": {
+      "dependsOn": ["^check-types"]
+    },
+    "browsers": {
+      "dependsOn": ["^browsers"]
+    },
+    "ci": {
+      "dependsOn": ["build", "synth"]
+    },
+    "e2e": {
+      "dependsOn": ["^build", "browsers"],
+      "passThroughEnv": ["PLAYWRIGHT_TEST_BASE_URL"]
     },
     "lint": {},
-    "start": {},
-    "synth": {},
-    "ci": {
-      "dependsOn": [
-        "build",
-        "synth"
-      ]
+    "start": {
+      "cache": false,
+      "persistent": true
+    },
+    "synth": {
+      "dependsOn": ["^synth"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": ["cdk.out/**"]
     }
   }
 }

@@ -1,0 +1,48 @@
+---
+import BusinessLegalName from "@components/atoms/BusinessLegalName.astro";
+import BusinessJurisdiction from "@components/atoms/BusinessJurisdiction.astro";
+import BusinessOffice from "@components/atoms/BusinessOffice.astro";
+import BusinessFounding from "@components/atoms/BusinessFounding.astro";
+import BusinessRegistration from "@components/atoms/BusinessRegistration.astro";
+import BusinessSocialsGitHub from "@components/atoms/BusinessSocialsGitHub.astro";
+import BusinessSocialsLinkedIn from "@components/atoms/BusinessSocialsLinkedIn.astro";
+---
+
+<footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
+  <aside>
+    <p>
+      <BusinessLegalName />, a company registered in <BusinessJurisdiction /> in
+      <BusinessFounding />, (company registration <BusinessRegistration />).
+      <br />
+      Registered office: <BusinessOffice />.
+      <br /><br />
+      Copyright © <BusinessFounding />-{new Date().getFullYear()}. Some rights
+      reserved,
+      <a
+        class="link"
+        href="https://creativecommons.org/licenses/by-nc/4.0/"
+        target="_blank"
+        rel="noopener noreferrer">CC-BY-NC 4.0</a
+      >.
+    </p>
+  </aside>
+  <nav>
+    <h6 class="footer-title">Resources</h6>
+    <a class="link link-hover" href="/accessibility">Accessibility</a>
+    <a class="link link-hover" href="/sustainability">Sustainability</a>
+    <a class="link link-hover" href="/security">Security</a>
+    <a class="link link-hover" href="/colophon">Colophon</a>
+  </nav>
+  <nav>
+    <h6 class="footer-title">Legal</h6>
+    <a class="link link-hover" href="/terms">Terms</a>
+    <a class="link link-hover" href="/privacy">Privacy</a>
+    <a class="link link-hover" href="/cookies">Cookies</a>
+    <a class="link link-hover" href="/sitemap-index.xml">Sitemap</a>
+  </nav>
+  <nav>
+    <div class="grid grid-flow-col gap-4">
+      <BusinessSocialsGitHub /><BusinessSocialsLinkedIn />
+    </div>
+  </nav>
+</footer>

@@ -1,0 +1,70 @@
+---
+title: Our Security Posture
+created: 2023-12-28 22:00:00
+modified: 2025-07-26 06:40:00
+layout: "@layouts/Layout.astro"
+---
+
+import BusinessContactSecurity from "@components/atoms/BusinessContactSecurity.astro";
+
+We are committed to meeting our visitors and customers' data protection and security needs. Below is a summary of our practices and policies, which help us keep your personal information safe and secure. We work hard to ensure our systems and infrastructure are protected against unauthorized or accidental access, loss, alteration, disclosure, or destruction.
+
+If you have further questions or require more information, please contact us at: <BusinessContactSecurity/>.
+
+## Frameworks
+
+Our security posture is strongly informed by the following frameworks: <dfn id="csa" className="h-card">Cloud Security Alliance</dfn> <dfn id="ccm">Cloud Controls Matrix</dfn> (<abbr>CSA</abbr> <abbr>CCM</abbr>); <abbr title="National Institute of Standards and Technology (in US)" className="h-card">NIST</abbr> <dfn id="rmf">Risk Management Framework</dfn> (<abbr>RMF</abbr>), <dfn id="csf">CyberSecurity Framework</dfn> (<abbr>CSF</abbr>), and <abbr lang="en-US" title="Security and Privacy Controls for Information Systems and Organizations">SP 800-53</abbr>; and, MITRE <abbr title="Adversarial Tactics, Techniques, and Common Knowledge">ATT&CK</abbr>, and <abbr lang="en-US" title="Detection, Denial, and Disruption Framework Empowering Network Defense">D3FEND</abbr>.
+
+We have on-the-ground experience implementing and operating <abbr lang="en-US" title="International Organization for Standardization standard for Information Security, Cybersecurity and Privacy Protection">ISO 27001:2022</abbr> (and 2013)s and <abbr lang="en-US" title="System and Organization Controls report on Trust Services Criteria">SOC 2 Type II</abbr> in other organisations. Our policies and controls draw upon that, in the context of the services and associated risks we provide.
+
+## Cloud Infrastructure
+
+All of our systems, including this website, are deployed into [<dfn id="aws" className="h-card">Amazon Web Services</dfn>](https://aws.amazon.com/) (<abbr>AWS</abbr>), a highly-secure modern cloud provider. You can read about their [Security and Compliance](https://aws.amazon.com/compliance/) posture.
+
+Our systems are serverless, meaning we use tpically use AWS in a <dfn id="paas">Platform-as-a-Service</dfn> (<abbr>PaaS</abbr>) capacity, and delegate responsibility for several concerns and functions to AWS under their [Shared Responsibility Model](https://aws.amazon.com/compliance/shared-responsibility-model/)
+
+We have specifically hardened our infrastructure, which is deployed and managed through <dfn id="iaa">infrastructure-as-application</dfn> (<abbr>IaA</abbr>, sometimes <abbr title="infrastructure-as-code">IaC</abbr>). At the heart of this is a strong separation between systems and environments, limiting the potential blast radius of any threat or compromise.
+
+We use <dfn id="sast">Static Application Security Testing</dfn> (<abbr>SAST</abbr>) and <dfn id="sca">Software Composition Analysis</dfn> (<abbr>SCA</abbr>) tools within our <dfn id="cicd">Continuous Integration and Continuous Deployment</dfn> (<abbr>CICD</abbr>) pipelines to enforce such practises.
+
+We use <dfn id="cspm">Cloud Security Posture Management</dfn> (<abbr>CSPM</abbr>) tools to reconcile and verify compliance of our production systems.
+
+## Access and Authentication
+
+We use strong, complex, unique passwords, typically forty random characters or more, with high-privilege and system access separated and scoped down to their role. Access by systems and processes use role assumption with short-lived sessions.
+
+We use multi-factor authentication wherever we can, and hardware keys on critical systems and assets.
+
+## Data Encryption and Communications
+
+We enforce <abbr title="HyperText Transfer Protocol Secure">HTTPS</abbr> on our website and <abbr title="Transport Layer Security">TLS</abbr> connections, conforming to TLS 1.3 or higher, across all communication channels.
+
+We use strong encryption for any data held at rest, conforming to <abbr title="Advanced Encryption Standard">AES</abbr>-256 or higher; this is enforced at the infrastructure.
+
+We use <abbr title="Domain-based Message Authentication, Reporting and Conformance">DMARC</abbr> (supported by <abbr title="Domain Keys Identified eMail">DKIM</abbr> and <abbr title="Sender Policy Framework">SPF</abbr>) policies to prevent spoofing.
+
+## Logging and Monitoring
+
+We retain product, application and system logs to provide visibility and forensics. These logs are structured, auditable, searchable, and are retained for at least 30 days.
+
+We use several external monitoring tools to provide an independent, non-privileged, view similar to what an external actor might see.
+
+## Patching and Maintenance
+
+Dependencies, operating systems and other software are pro-actively managed to be evergreen, either through auto-updates or similar mechanisms. All security patches are applied within five to seven days, if not sooner.
+
+## Supply Chain
+
+All software, including dependencies within our systems and toolchain, are carefully selected prior to use; this includes <dfn id="sbom">Software Bill of Materials</dfn> (<abbr>SBOM</abbr>) monitoring for emerging risks, recurring review as part of third-party risk management; hardened configuration of critical <dfn id="saas">Software-as-a-Service</dfn> (<abbr>SaaS</abbr>) platforms, and cautious integration between such services.
+
+We have hardened our CICD pipelines to detect anomalies connections, use pinned dependencies to verify and check all changes.
+
+## Endpoints
+
+Laptops are hardened, including disk encryption and active firewall, and monitored using our fleet visibility tool.
+
+## Disclosures
+
+We welcome investigative work and responsible disclosure carried out by well-intentioned, ethical security researchers. We are committed to thoroughly investigating and resolving security issues in our platform and services in collaboration with the security community, but are not currently operating a bug bounty programme.
+
+Disclosures can be made through the contact mechanisms outlined in our <a class="link" href="/.well-known/security.txt">security.txt</a>, or at <BusinessContactSecurity/>.

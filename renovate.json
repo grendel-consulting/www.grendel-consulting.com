@@ -8,14 +8,9 @@
   "packageRules": [
     {
       "groupName": "types-and-linters",
-      "matchDepTypes": [
-        "devDependencies"
-      ],
+      "matchDepTypes": ["devDependencies"],
       "automerge": true,
-      "matchPackageNames": [
-        "/@types/",
-        "/prettier/"
-      ]
+      "matchPackageNames": ["/@types/", "/lint/", "/prettier/"]
     }
   ],
   "pre-commit": {
@@ -23,11 +18,7 @@
   },
   "timezone": "Europe/London",
   "vulnerabilityAlerts": {
-    "labels": [
-      "security"
-    ],
-    "assignees": [
-      "@ramirezj"
-    ]
+    "labels": ["security"],
+    "assignees": ["ramirezj"]
   }
 }

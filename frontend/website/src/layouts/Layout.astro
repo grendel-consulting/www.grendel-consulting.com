@@ -1,0 +1,27 @@
+---
+import Breadcrumbs from "@components/molecules/Breadcrumbs.astro";
+import Footer from "@components/organisms/Footer.astro";
+import Header from "@components/organisms/Header.astro";
+import "../assets/site.css";
+const { frontmatter } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+    <title>{frontmatter.title}</title>
+  </head>
+  <body class="prose md:prose-lg lg:prose-xl max-w-none">
+    <Header />
+    <Breadcrumbs />
+    <main class="p-10">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

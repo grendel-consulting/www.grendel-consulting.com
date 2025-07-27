@@ -1,0 +1,45 @@
+---
+const { currentPath } = Astro.props;
+
+// Function to generate breadcrumbs based on the current path
+const bakeBreadcrumbs = (path: string) => {
+  // Split the path into segments and filter out "/" segments
+  const segments = path.split("/").filter((segment) => segment.trim() !== "");
+  const breadcrumbs = segments.map((segment, index) => {
+    const target = "/" + segments.slice(0, index + 1).join("/");
+    return {
+      // Deslugify the segment for display
+      segment: segment
+        .replace(/-/g, " ")
+        .replace(/\b\w/g, (match) => match.toUpperCase()),
+      target,
+    };
+  });
+  // Prepone the "Home" breadcrumb
+  return [{ segment: "Home", target: "/" }, ...breadcrumbs];
+};
+
+// Beware, `currentPath` is undefined at the root
+const breadcrumbs =
+  currentPath === undefined ? [] : bakeBreadcrumbs(currentPath);
+---
+
+{
+  breadcrumbs.length === 0 ? null : (
+    <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
+      <ul>
+        {breadcrumbs.map((crumb) => (
+          <li>
+            <a
+              href={crumb.target}
+              class="link link-hover"
+              aria-label={`Go to ${crumb.segment}`}
+            >
+              {crumb.segment}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}

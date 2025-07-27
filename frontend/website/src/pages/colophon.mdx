@@ -1,0 +1,28 @@
+---
+title: Colophon
+created: 2023-12-28 22:00:00
+modified: 2025-07-26 06:40:00
+layout: "@layouts/Layout.astro"
+---
+
+We built this website by hand, primarily to explore a collection of Web 2.0 techniques and technologies. It is deliberately overengineered, partly an indulgence and partly to demonstrate specific concerns or opportunities that a modern web experience can offer. Work on it is in the open, and open sourced, on [GitHub](https://github.com/grendel-consulting/www.grendel-consulting.com) if you want to explore or learn from it.
+
+## Technologies
+
+[Astro](https://astro.build/) provides me with most of the heavy lifting - it's a static site generator that handles server-side rendering, routing, access to features through plugins, and other optimisations. I'm using it with [Typescript](https://www.typescriptlang.org/) (and a sprinkling of [Zod](https://zod.dev/)) to shift failures as early as possible, and leaning on [DaisyUI](https://daisyui.com/) and [TailwindCSS](https://tailwindcss.com/) to simplify and centralise components and styling. Content is created using [MDX](https://mdxjs.com/), a Markdown variant, again separating code from content.
+
+Developer experience is key, since I want to focus time on value, and so I use [PNPM](https://pnpm.io/) and [Turbo](https://turbo.build/repo) for a rock solid monorepo and build setup, complete with tooling such as linters, formatters, testing, and other fail-fast signals.
+
+All of the infrastructure is defined in [CDKTF](https://developer.hashicorp.com/terraform/cdktf), a Typescript wrapper over [Terraform](https://developer.hashicorp.com/terraform), and deployed into an [<dfn id="aws">Amazon Web Services</dfn>](https://aws.amazon.com/) (<abbr>AWS</abbr>) Account to host the website. It creates a CloudFront Distribution that serves content from an isolated S3 storage bucket, with hardened security headers and apex redirection.
+
+Deployment is through <abbr title="Continuous Integration and Continuous Deployment">CICD</abbr> using [AWS CodePipeline](https://aws.amazon.com/codepipeline/) and [Terraform Cloud](https://developer.hashicorp.com/terraform/cloud-docs).
+
+## Content
+
+Using MDX for writing and editing my content enables a distraction-free writing approach, and my content management system is deliberately simple: files and folders, with minimal frontmatter to translate from that to a cohesive visitor experience.
+
+In places, I use [Microformats](https://microformats.org/wiki/Main_Page) and other semantic enrichment.
+
+## Design
+
+Design is kept simple and minimalist, with a curated set of icons and colours.
