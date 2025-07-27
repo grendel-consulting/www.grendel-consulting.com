@@ -1,5 +1,9 @@
 ---
-import { BUSINESS } from "@references/business.ts";
+import { BUSINESS } from "@references/business";
 ---
 
-<a class="font-medium" href={`mailto:${BUSINESS.CONTACT.BOOKINGS}`}><slot /></a>
+<a
+  class="font-medium"
+  href={`mailto:${BUSINESS.CONTACT.BOOKINGS}`}
+  rel="noopener"><slot /></a
+>

@@ -26,16 +26,20 @@ const breadcrumbs =
 
 {
   breadcrumbs.length === 0 ? null : (
-    <div class="breadcrumbs text-sm">
+    <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
       <ul>
         {breadcrumbs.map((crumb) => (
           <li>
-            <a href={crumb.target} class="link link-hover">
+            <a
+              href={crumb.target}
+              class="link link-hover"
+              aria-label={`Go to ${crumb.segment}`}
+            >
               {crumb.segment}
             </a>
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   )
 }
