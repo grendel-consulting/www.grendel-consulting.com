@@ -1,12 +1,5 @@
-.cache
-.env.*
-.turbo
-node_modules
-public
-src/gatsby-types.d.ts
+# Generated types
+.astro/
 
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
-/.features-gen/
+# Build output
+dist/

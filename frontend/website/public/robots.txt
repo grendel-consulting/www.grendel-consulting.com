@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.grendel-consulting.com/sitemap-index.xml

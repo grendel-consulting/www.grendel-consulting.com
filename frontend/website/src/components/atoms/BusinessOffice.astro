@@ -1,0 +1,12 @@
+---
+import { BUSINESS } from "@references/business.ts";
+---
+
+<span class="font-medium h-adr">
+  <span class="p-street-address">{BUSINESS.OFFICE.STREET_ADDRESS},{" "}</span>
+  <span class="p-locality">{BUSINESS.OFFICE.LOCALITY},{" "}</span>
+  <span class="p-postal-code">{BUSINESS.OFFICE.POSTAL_CODE},{" "}</span>
+  <abbr class="p-country-name" title={BUSINESS.OFFICE.COUNTRY_NAME}
+    >{BUSINESS.OFFICE.COUNTRY_CODE}</abbr
+  >
+</span>
