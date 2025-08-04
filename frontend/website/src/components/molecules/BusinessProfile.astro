@@ -1,0 +1,69 @@
+---
+export interface Props {
+  frontmatter?: {
+    title?: string;
+    description?: string;
+    created?: string;
+    modified?: string;
+  };
+  type?: string;
+}
+
+import { BUSINESS } from "@references/business";
+import { PRINCIPAL } from "@references/principal";
+
+const { frontmatter, type = "" } = Astro.props as Props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.url);
+const siteURL = new URL("/", Astro.url);
+const websiteSchema = new URL("/#/schema/WebSite", Astro.url);
+const personSchema = new URL(
+  `/#/schema/Person/${PRINCIPAL.USER_NAME}`,
+  Astro.url,
+);
+
+const businessProfile = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": websiteSchema,
+      name: BUSINESS.SHORT_NAME,
+      description: BUSINESS.PURPOSE,
+      url: siteURL,
+      publisher: {
+        "@type": "Person",
+        "@id": personSchema,
+        name: PRINCIPAL.FULL_NAME,
+        url: siteURL,
+      },
+    },
+    ...(type
+      ? [
+          {
+            "@type": type,
+            "@id": canonicalURL,
+            url: canonicalURL,
+            name: frontmatter?.title,
+            headline: frontmatter?.title,
+            description: frontmatter?.description,
+            isPartOf: {
+              "@id": websiteSchema,
+            },
+            datePublished: frontmatter?.created,
+            dateModified: frontmatter?.modified,
+            author: {
+              "@type": "Person",
+              "@id": personSchema,
+            },
+          },
+        ]
+      : []),
+  ],
+};
+---
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(businessProfile)}
+/>

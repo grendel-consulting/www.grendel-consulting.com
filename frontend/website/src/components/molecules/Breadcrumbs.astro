@@ -1,5 +1,9 @@
 ---
-const { currentPath } = Astro.props;
+export interface Props {
+  currentPath?: string;
+}
+
+const { currentPath } = Astro.props as Props;
 
 // Function to generate breadcrumbs based on the current path
 const bakeBreadcrumbs = (path: string) => {
@@ -27,15 +31,24 @@ const breadcrumbs =
 {
   breadcrumbs.length === 0 ? null : (
     <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
-      <ul>
-        {breadcrumbs.map((crumb) => (
-          <li>
+      <ul itemscope itemtype="https://schema.org/BreadcrumbList">
+        {breadcrumbs.map((crumb, index) => (
+          <li
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
             <a
+              itemscope
+              itemtype="https://schema.org/WebPage"
+              itemprop="item"
+              itemid={crumb.target}
               href={crumb.target}
               class="link link-hover"
               aria-label={`Go to ${crumb.segment}`}
             >
-              {crumb.segment}
+              <span itemprop="name">{crumb.segment}</span>
+              <meta itemprop="position" content={(index + 1).toString()} />
             </a>
           </li>
         ))}

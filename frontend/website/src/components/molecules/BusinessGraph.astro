@@ -1,0 +1,22 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+}
+
+import { BUSINESS } from "@references/business";
+
+const {
+  title = `${BUSINESS.SHORT_NAME} | ${BUSINESS.TAGLINE}`,
+  description = BUSINESS.PURPOSE,
+} = Astro.props as Props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.url);
+---
+
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:site_name" content={BUSINESS.SHORT_NAME} />
+<meta property="og:image" content="/favicon.svg" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:type" content="website" />
