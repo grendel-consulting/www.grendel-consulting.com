@@ -3,10 +3,12 @@ import {
   NamedCloudWorkspace,
   TerraformStack,
   TerraformOutput,
+  Token,
 } from "cdktf";
 import { AwsProvider } from "@cdktf/provider-aws/lib/provider";
 import { DataAwsRoute53Zone } from "@cdktf/provider-aws/lib/data-aws-route53-zone";
 import { DataAwsIamPolicyDocument } from "@cdktf/provider-aws/lib/data-aws-iam-policy-document";
+import { IamRole } from "@cdktf/provider-aws/lib/iam-role";
 import { Route53Record } from "@cdktf/provider-aws/lib/route53-record";
 import { AcmCertificate } from "@cdktf/provider-aws/lib/acm-certificate";
 import { AcmCertificateValidation } from "@cdktf/provider-aws/lib/acm-certificate-validation";
@@ -19,6 +21,10 @@ import { CloudfrontResponseHeadersPolicy } from "@cdktf/provider-aws/lib/cloudfr
 import { CloudfrontCachePolicy } from "@cdktf/provider-aws/lib/cloudfront-cache-policy";
 import { Construct } from "constructs";
 import { z } from "zod";
+import { LambdaFunction } from "@cdktf/provider-aws/lib/lambda-function";
+import { DataArchiveFile } from "@cdktf/provider-archive/lib/data-archive-file";
+import { ArchiveProvider } from "@cdktf/provider-archive/lib/provider";
+import { IamRolePolicyAttachment } from "@cdktf/provider-aws/lib/iam-role-policy-attachment";
 
 const SpaWebsiteConfig = z.object({
   apexDomain: z.string(),
@@ -42,6 +48,7 @@ export class SpaWebsite extends TerraformStack {
 
     const originId = `s3-${targetDomain}`;
     const reportingEndpoint = "https://hrothgar.uriports.com/reports";
+    const middleware = "spa-middleware";
 
     const isRestricted = props.restricted ?? false;
     const includeApex = props.includeApex ?? false;
@@ -61,6 +68,8 @@ export class SpaWebsite extends TerraformStack {
         },
       ],
     });
+
+    const archiveProvider = new ArchiveProvider(this, "archive", {});
 
     const cloudfrontProvider = new AwsProvider(this, "aws.cloudfront", {
       region: "us-east-1",
@@ -277,6 +286,52 @@ export class SpaWebsite extends TerraformStack {
       },
     );
 
+    const middlewarePolicy = new DataAwsIamPolicyDocument(
+      this,
+      "middleware_policy",
+      {
+        statement: [
+          {
+            actions: ["sts:AssumeRole"],
+            principals: [
+              {
+                type: "Service",
+                identifiers: ["lambda.amazonaws.com"],
+              },
+            ],
+          },
+        ],
+      },
+    );
+
+    const middlewareRole = new IamRole(this, "middleware_role", {
+      name: `${targetWorkspace}-middleware-role`,
+      assumeRolePolicy: Token.asString(middlewarePolicy.json),
+    });
+
+    new IamRolePolicyAttachment(this, "middleware_role_policy", {
+      role: middlewareRole.name,
+      policyArn:
+        "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+    });
+
+    const middlewareFile = new DataArchiveFile(this, "middleware_file", {
+      provider: archiveProvider,
+      sourceFile: `./${middleware}.js`,
+      outputPath: `./${middleware}.zip`,
+      type: "zip",
+    });
+
+    const middlewareFunction = new LambdaFunction(this, "middleware_function", {
+      provider: cloudfrontProvider,
+      functionName: `${targetWorkspace}-middleware`,
+      filename: Token.asString(middlewareFile.outputPath),
+      sourceCodeHash: Token.asString(middlewareFile.outputBase64Sha256),
+      handler: `${middleware}.handler`,
+      runtime: "nodejs20.x",
+      role: middlewareRole.arn,
+    });
+
     const distribution = new CloudfrontDistribution(this, "distribution", {
       aliases: [targetDomain],
       defaultRootObject: "index.html",
@@ -315,6 +370,13 @@ export class SpaWebsite extends TerraformStack {
         viewerProtocolPolicy: "redirect-to-https",
         cachePolicyId: cachePolicy.id,
         responseHeadersPolicyId: responseHeaders.id,
+        lambdaFunctionAssociation: [
+          {
+            eventType: "origin-request",
+            lambdaArn: middlewareFunction.arn,
+            includeBody: false,
+          },
+        ],
         compress: true,
       },
 

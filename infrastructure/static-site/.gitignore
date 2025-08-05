@@ -11,3 +11,5 @@ tsconfig.tsbuildinfo
 !eslint.config.js
 !jest.config.js
 !setup.js
+!spa-middleware.js
+*.zip
