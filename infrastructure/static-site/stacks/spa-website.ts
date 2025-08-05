@@ -24,6 +24,7 @@ import { z } from "zod";
 import { LambdaFunction } from "@cdktf/provider-aws/lib/lambda-function";
 import { DataArchiveFile } from "@cdktf/provider-archive/lib/data-archive-file";
 import { ArchiveProvider } from "@cdktf/provider-archive/lib/provider";
+import { IamRolePolicyAttachment } from "@cdktf/provider-aws/lib/iam-role-policy-attachment";
 
 const SpaWebsiteConfig = z.object({
   apexDomain: z.string(),
@@ -308,6 +309,12 @@ export class SpaWebsite extends TerraformStack {
       assumeRolePolicy: Token.asString(middlewarePolicy.json),
     });
 
+    new IamRolePolicyAttachment(this, "middleware_role_policy", {
+      role: middlewareRole.name,
+      policyArn:
+        "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+    });
+
     const middlewareFile = new DataArchiveFile(this, "middleware_file", {
       provider: archiveProvider,
       sourceFile: `./${middleware}.js`,
@@ -316,6 +323,7 @@ export class SpaWebsite extends TerraformStack {
     });
 
     const middlewareFunction = new LambdaFunction(this, "middleware_function", {
+      provider: cloudfrontProvider,
       functionName: `${targetWorkspace}-middleware`,
       filename: Token.asString(middlewareFile.outputPath),
       sourceCodeHash: Token.asString(middlewareFile.outputBase64Sha256),

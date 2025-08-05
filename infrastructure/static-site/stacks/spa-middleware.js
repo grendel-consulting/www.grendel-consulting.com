@@ -6,11 +6,11 @@ exports.handler = (event, context, callback) => {
   let target = request.uri;
 
   // Check whether the URI is a directory.
-  if (uri.endsWith("/")) {
+  if (target.endsWith("/")) {
     target += "index.html";
   }
   // Check whether the URI is missing a file extension.
-  else if (!uri.includes(".")) {
+  else if (!target.includes(".")) {
     target = request.uri + "/index.html";
   }
 
