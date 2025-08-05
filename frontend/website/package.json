@@ -23,6 +23,7 @@
     "@repo/eslint-config": "workspace:*",
     "astro": "5.12.8",
     "eslint": "9.32.0",
+    "node-html-parser": "7.0.1",
     "sharp": "0.34.3",
     "typescript": "5.9.2",
     "zod": "4.0.14"
