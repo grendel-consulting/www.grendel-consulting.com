@@ -29,4 +29,5 @@ artifacts:
   files:
     - "frontend/**/dist/**/*"
     - "infrastructure/**/cdktf.out/**/*"
+    - "infrastructure/**/spa-*.js"
     - "pipelines/*.yml"
