@@ -81,6 +81,9 @@ importers:
 
   infrastructure/static-site:
     dependencies:
+      '@cdktf/provider-archive':
+        specifier: 11.0.0
+        version: 11.0.0(cdktf@0.21.0(constructs@10.4.2))(constructs@10.4.2)
       '@cdktf/provider-aws':
         specifier: 21.6.0
         version: 21.6.0(cdktf@0.21.0(constructs@10.4.2))(constructs@10.4.2)
@@ -562,6 +565,13 @@ packages:
 
   '@capsizecss/unpack@2.4.0':
     resolution: {integrity: sha512-GrSU71meACqcmIUxPYOJvGKF0yryjN/L1aCuE9DViCTJI7bfkjgYDPD1zbNDcINJwSSP6UaBZY9GAbYDO7re0Q==}
+
+  '@cdktf/provider-archive@11.0.0':
+    resolution: {integrity: sha512-nouLjv9n3mr44x+KTi8Jq4PT8KAKoziEG24jbN1EkZo5uTrAb+XL2XzJokZ/xIE7aXEX4Xo6BkmKaeEtF0h5ig==}
+    engines: {node: '>= 20.9.0'}
+    peerDependencies:
+      cdktf: ^0.21.0
+      constructs: ^10.4.2
 
   '@cdktf/provider-aws@21.6.0':
     resolution: {integrity: sha512-uUoar5bwMf/dNM3XgkzYJQ9/F7jteV+EIM2igrJWdxwq6CL2S9Ss3LjckIcDbhuVhtIEwTo9dwwLx7Mu/ECcHA==}
@@ -5649,6 +5659,11 @@ snapshots:
       fontkit: 2.0.4
     transitivePeerDependencies:
       - encoding
+
+  '@cdktf/provider-archive@11.0.0(cdktf@0.21.0(constructs@10.4.2))(constructs@10.4.2)':
+    dependencies:
+      cdktf: 0.21.0(constructs@10.4.2)
+      constructs: 10.4.2
 
   '@cdktf/provider-aws@21.6.0(cdktf@0.21.0(constructs@10.4.2))(constructs@10.4.2)':
     dependencies:
