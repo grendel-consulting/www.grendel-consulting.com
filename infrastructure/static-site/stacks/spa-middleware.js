@@ -11,7 +11,7 @@ exports.handler = (event, context, callback) => {
   }
   // Check whether the URI is missing a file extension.
   else if (!target.includes(".")) {
-    target = request.uri + "/index.html";
+    target += "/index.html";
   }
 
   request.uri = target;
