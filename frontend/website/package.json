@@ -23,12 +23,13 @@
     "@repo/eslint-config": "workspace:*",
     "astro": "5.12.8",
     "eslint": "9.32.0",
+    "node-html-parser": "7.0.1",
     "sharp": "0.34.3",
     "typescript": "5.9.2",
     "zod": "4.0.14"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.4.1",
+    "@astrojs/sitemap": "3.4.1",
     "@tailwindcss/typography": "0.5.16",
     "@tailwindcss/vite": "4.1.11",
     "daisyui": "5.0.50",
