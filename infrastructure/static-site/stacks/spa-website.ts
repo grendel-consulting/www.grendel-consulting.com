@@ -296,7 +296,10 @@ export class SpaWebsite extends TerraformStack {
             principals: [
               {
                 type: "Service",
-                identifiers: ["lambda.amazonaws.com"],
+                identifiers: [
+                  "lambda.amazonaws.com",
+                  "edgelambda.amazonaws.com",
+                ],
               },
             ],
           },
