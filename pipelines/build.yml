@@ -24,10 +24,11 @@ phases:
   build:
     commands:
       - pnpm run ci
+      - mv infrastructure/static-site/stacks/spa-middleware.js infrastructure/static-site/cdktf.out/stacks/staging/
+      - mv infrastructure/static-site/stacks/spa-middleware.js infrastructure/static-site/cdktf.out/stacks/production/
 
 artifacts:
   files:
     - "frontend/**/dist/**/*"
     - "infrastructure/**/cdktf.out/**/*"
-    - "infrastructure/**/spa-*.js"
     - "pipelines/*.yml"
