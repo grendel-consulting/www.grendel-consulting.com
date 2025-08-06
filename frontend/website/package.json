@@ -29,7 +29,7 @@
     "zod": "4.0.14"
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.4.1",
+    "@astrojs/sitemap": "3.4.2",
     "@tailwindcss/typography": "0.5.16",
     "@tailwindcss/vite": "4.1.11",
     "daisyui": "5.0.50",
