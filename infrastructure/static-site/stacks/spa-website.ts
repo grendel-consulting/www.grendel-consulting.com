@@ -330,6 +330,7 @@ export class SpaWebsite extends TerraformStack {
       handler: `${middleware}.handler`,
       runtime: "nodejs20.x",
       role: middlewareRole.arn,
+      publish: true,
     });
 
     const distribution = new CloudfrontDistribution(this, "distribution", {
