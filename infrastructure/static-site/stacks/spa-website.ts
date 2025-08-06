@@ -373,7 +373,7 @@ export class SpaWebsite extends TerraformStack {
         lambdaFunctionAssociation: [
           {
             eventType: "origin-request",
-            lambdaArn: middlewareFunction.arn,
+            lambdaArn: middlewareFunction.qualifiedArn,
             includeBody: false,
           },
         ],
