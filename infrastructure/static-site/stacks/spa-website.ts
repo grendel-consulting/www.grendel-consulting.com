@@ -424,7 +424,6 @@ export class SpaWebsite extends TerraformStack {
         "apex_distribution",
         {
           aliases: [props.apexDomain],
-          defaultRootObject: "index.html",
 
           isIpv6Enabled: true,
           enabled: true,
@@ -445,7 +444,7 @@ export class SpaWebsite extends TerraformStack {
 
           origin: [
             {
-              domainName: apexBucket.bucketRegionalDomainName,
+              domainName: apexRedirect.websiteEndpoint,
               originId: `s3-${props.apexDomain}`,
             },
           ],
