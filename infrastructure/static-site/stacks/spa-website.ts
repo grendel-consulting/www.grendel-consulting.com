@@ -1,5 +1,6 @@
 import {
   CloudBackend,
+  Fn,
   NamedCloudWorkspace,
   TerraformStack,
   TerraformOutput,
@@ -25,7 +26,7 @@ import { LambdaFunction } from "@cdktf/provider-aws/lib/lambda-function";
 import { DataArchiveFile } from "@cdktf/provider-archive/lib/data-archive-file";
 import { ArchiveProvider } from "@cdktf/provider-archive/lib/provider";
 import { IamRolePolicyAttachment } from "@cdktf/provider-aws/lib/iam-role-policy-attachment";
-import { S3BucketWebsiteConfiguration } from "@cdktf/provider-aws/lib/s3-bucket-website-configuration";
+import { CloudfrontFunction } from "@cdktf/provider-aws/lib/cloudfront-function";
 
 const SpaWebsiteConfig = z.object({
   apexDomain: z.string(),
@@ -337,6 +338,15 @@ export class SpaWebsite extends TerraformStack {
       publish: true,
     });
 
+    const apexFunction = new CloudfrontFunction(this, "apex_function", {
+      provider: cloudfrontProvider,
+      name: `${targetWorkspace}-apex-function`,
+      code: Token.asString(Fn.file("${path.module}/spa-apex-redirect.js")),
+      comment: "Redirects apex domain to www subdomain",
+      runtime: "cloudfront-js-2.0",
+      publish: true,
+    });
+
     const distribution = new CloudfrontDistribution(this, "distribution", {
       aliases: [targetDomain],
       defaultRootObject: "index.html",
@@ -382,6 +392,14 @@ export class SpaWebsite extends TerraformStack {
             includeBody: false,
           },
         ],
+        functionAssociation: !includeApex
+          ? []
+          : [
+              {
+                eventType: "viewer-request",
+                functionArn: apexFunction.qualifiedArn,
+              },
+            ],
         compress: true,
       },
 
@@ -403,81 +421,14 @@ export class SpaWebsite extends TerraformStack {
     });
 
     if (includeApex) {
-      const apexBucket = new S3Bucket(this, "apex_website", {
-        bucket: Token.asString(props.apexDomain),
-      });
-
-      const apexRedirect = new S3BucketWebsiteConfiguration(
-        this,
-        "apex_website_config",
-        {
-          bucket: Token.asString(apexBucket.id),
-          redirectAllRequestsTo: {
-            hostName: targetDomain,
-            protocol: "https",
-          },
-        },
-      );
-
-      const apexDistribution = new CloudfrontDistribution(
-        this,
-        "apex_distribution",
-        {
-          aliases: [props.apexDomain],
-
-          isIpv6Enabled: true,
-          enabled: true,
-          httpVersion: "http2and3",
-
-          viewerCertificate: {
-            acmCertificateArn: certificate.arn,
-            minimumProtocolVersion: "TLSv1.2_2021",
-            sslSupportMethod: "sni-only",
-          },
-
-          restrictions: {
-            geoRestriction: {
-              restrictionType: isRestricted ? "whitelist" : "none",
-              locations: isRestricted ? ["GB"] : [],
-            },
-          },
-
-          origin: [
-            {
-              domainName: apexRedirect.websiteEndpoint,
-              originId: `s3-${props.apexDomain}`,
-              customOriginConfig: {
-                httpPort: 80,
-                httpsPort: 443,
-                originProtocolPolicy: "https-only",
-                originSslProtocols: ["TLSv1.2"],
-              },
-            },
-          ],
-          defaultCacheBehavior: {
-            allowedMethods: ["GET", "HEAD", "OPTIONS"],
-            cachedMethods: ["GET", "HEAD"],
-            targetOriginId: `s3-${props.apexDomain}`,
-            viewerProtocolPolicy: "redirect-to-https",
-            cachePolicyId: cachePolicy.id,
-            responseHeadersPolicyId: responseHeaders.id,
-            compress: true,
-          },
-
-          tags: {
-            Name: props.apexDomain,
-          },
-        },
-      );
-
       new Route53Record(this, "apex", {
         provider: controlPlaneProvider,
         zoneId: existingZone.zoneId,
         name: props.apexDomain,
         type: "A",
         alias: {
-          name: apexDistribution.domainName,
-          zoneId: apexDistribution.hostedZoneId,
+          name: distribution.domainName,
+          zoneId: distribution.hostedZoneId,
           evaluateTargetHealth: false,
         },
       });

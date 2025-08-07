@@ -24,8 +24,8 @@ phases:
   build:
     commands:
       - pnpm run ci
-      - cp infrastructure/static-site/stacks/spa-middleware.js infrastructure/static-site/cdktf.out/stacks/staging/
-      - cp infrastructure/static-site/stacks/spa-middleware.js infrastructure/static-site/cdktf.out/stacks/production/
+      - cp infrastructure/static-site/functions/*.js infrastructure/static-site/cdktf.out/stacks/staging/
+      - cp infrastructure/static-site/functions/*.js infrastructure/static-site/cdktf.out/stacks/production/
 
 artifacts:
   files:
