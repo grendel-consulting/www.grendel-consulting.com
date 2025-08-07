@@ -446,6 +446,12 @@ export class SpaWebsite extends TerraformStack {
             {
               domainName: apexRedirect.websiteEndpoint,
               originId: `s3-${props.apexDomain}`,
+              customOriginConfig: {
+                httpPort: 80,
+                httpsPort: 443,
+                originProtocolPolicy: "https-only",
+                originSslProtocols: ["TLSv1.2"],
+              },
             },
           ],
           defaultCacheBehavior: {
