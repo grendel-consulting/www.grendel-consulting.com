@@ -397,7 +397,7 @@ export class SpaWebsite extends TerraformStack {
           : [
               {
                 eventType: "viewer-request",
-                functionArn: apexFunction.qualifiedArn,
+                functionArn: apexFunction.arn,
               },
             ],
         compress: true,
