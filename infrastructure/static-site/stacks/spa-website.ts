@@ -25,6 +25,7 @@ import { LambdaFunction } from "@cdktf/provider-aws/lib/lambda-function";
 import { DataArchiveFile } from "@cdktf/provider-archive/lib/data-archive-file";
 import { ArchiveProvider } from "@cdktf/provider-archive/lib/provider";
 import { IamRolePolicyAttachment } from "@cdktf/provider-aws/lib/iam-role-policy-attachment";
+import { S3BucketWebsiteConfiguration } from "@cdktf/provider-aws/lib/s3-bucket-website-configuration";
 
 const SpaWebsiteConfig = z.object({
   apexDomain: z.string(),
@@ -136,6 +137,22 @@ export class SpaWebsite extends TerraformStack {
     const bucket = new S3Bucket(this, "website", {
       bucket: targetDomain,
     });
+
+    const apexBucket = !includeApex
+      ? null
+      : new S3Bucket(this, "apex_website", {
+          bucket: Token.asString(props.apexDomain),
+        });
+
+    if (apexBucket) {
+      new S3BucketWebsiteConfiguration(this, "apex_website_config", {
+        bucket: Token.asString(apexBucket.id),
+        redirectAllRequestsTo: {
+          hostName: targetDomain,
+          protocol: "https",
+        },
+      });
+    }
 
     new S3BucketVersioningA(this, "versioning", {
       bucket: bucket.id,
