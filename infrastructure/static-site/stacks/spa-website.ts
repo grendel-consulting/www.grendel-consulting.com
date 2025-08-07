@@ -1,6 +1,5 @@
 import {
   CloudBackend,
-  Fn,
   NamedCloudWorkspace,
   TerraformStack,
   TerraformOutput,
@@ -343,7 +342,8 @@ export class SpaWebsite extends TerraformStack {
       : new CloudfrontFunction(this, "apex_function", {
           provider: cloudfrontProvider,
           name: `${targetWorkspace}-apex-function`,
-          code: Token.asString(Fn.file("./spa-apex-redirect.js")),
+          code: "function handler(event) {const apex = 'grendel-consulting.com';let request = event.request;if (request.headers.host) {let host = request.headers.host.value;if (host === apex) {return {statusCode: 301,statusDescription: 'Moved Permanently',headers: {location: { value: `https://www.${apex}${request.uri}` },},};}}}return event.request;}",
+
           comment: "Redirects apex domain to www subdomain",
           runtime: "cloudfront-js-2.0",
           publish: true,
