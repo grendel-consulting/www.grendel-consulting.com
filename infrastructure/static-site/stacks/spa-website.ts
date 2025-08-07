@@ -338,14 +338,15 @@ export class SpaWebsite extends TerraformStack {
       publish: true,
     });
 
-    const apexFunction = new CloudfrontFunction(this, "apex_function", {
+    const apexFunction = (!includeApex ? null: new CloudfrontFunction(this, "apex_function", {
       provider: cloudfrontProvider,
       name: `${targetWorkspace}-apex-function`,
       code: Token.asString(Fn.file("${path.module}/spa-apex-redirect.js")),
       comment: "Redirects apex domain to www subdomain",
       runtime: "cloudfront-js-2.0",
       publish: true,
-    });
+    })
+    );
 
     const distribution = new CloudfrontDistribution(this, "distribution", {
       aliases: [targetDomain],
@@ -392,7 +393,7 @@ export class SpaWebsite extends TerraformStack {
             includeBody: false,
           },
         ],
-        functionAssociation: !includeApex
+        functionAssociation: !apexFunction
           ? []
           : [
               {
