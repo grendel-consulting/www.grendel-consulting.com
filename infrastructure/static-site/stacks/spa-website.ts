@@ -470,8 +470,8 @@ export class SpaWebsite extends TerraformStack {
         name: props.apexDomain,
         type: "A",
         alias: {
-          name: distribution.domainName,
-          zoneId: distribution.hostedZoneId,
+          name: apexDistribution.domainName,
+          zoneId: apexDistribution.hostedZoneId,
           evaluateTargetHealth: false,
         },
       });
