@@ -342,7 +342,7 @@ export class SpaWebsite extends TerraformStack {
       : new CloudfrontFunction(this, "apex_function", {
           provider: cloudfrontProvider,
           name: `${targetWorkspace}-apex-function`,
-          code: Token.asString("function handler(event) {const apex = 'grendel-consulting.com';let request = event.request;if (request.headers.host) {let host = request.headers.host.value;if (host === apex) {return {statusCode: 301,statusDescription: 'Moved Permanently',headers: {location: { value: 'https://www.' + apex + request.uri },},};}}}return event.request;}"),
+          code: Token.asString("function handler(event) {\nconst apex = 'grendel-consulting.com';\nlet request = event.request;\nif (request.headers.host) {\nlet host = request.headers.host.value;\nif (host === apex) {\nreturn {\nstatusCode: 301,\nstatusDescription: 'Moved Permanently',\nheaders: {\nlocation: { value: 'https://www.' + apex + request.uri },\n},\n};\n}\n}\n}\nreturn event.request;\n}"),
 
           comment: "Redirects apex domain to www subdomain",
           runtime: "cloudfront-js-2.0",
@@ -350,7 +350,7 @@ export class SpaWebsite extends TerraformStack {
         });
 
     const distribution = new CloudfrontDistribution(this, "distribution", {
-      aliases: [targetDomain],
+      aliases: [targetDomain, ...(includeApex ? [props.apexDomain] : [])],
       defaultRootObject: "index.html",
 
       isIpv6Enabled: true,
