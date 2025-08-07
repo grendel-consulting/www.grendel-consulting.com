@@ -1,5 +1,11 @@
 ---
 import Icon from "@components/atoms/Icon.astro";
+
+const menuItems = [
+  { href: "/services/", label: "Our Services" },
+  { href: "/ways-of-working/", label: "Ways of Working" },
+  { href: "/experiments/", label: "Experiments" },
+];
 ---
 
 <div class="navbar bg-base-100">
@@ -11,9 +17,15 @@ import Icon from "@components/atoms/Icon.astro";
   </div>
   <div class="navbar-end hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
-      <li><a class="link" href="/services/">Our Services</a></li>
-      <li><a class="link" href="/ways-of-working/">Ways of Working</a></li>
-      <li><a class="link" href="/experiments/">Experiments</a></li>
+      {
+        menuItems.map((item) => (
+          <li>
+            <a class="link" href={item.href}>
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </div>
   <div class="navbar-end lg:hidden">
@@ -41,9 +53,15 @@ import Icon from "@components/atoms/Icon.astro";
         tabindex="0"
         class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
       >
-        <li><a href="/services/">Our Services</a></li>
-        <li><a href="/ways-of-working/">Ways of Working</a></li>
-        <li><a href="/experiments/">Experiments</a></li>
+        {
+          menuItems.map((item) => (
+            <li>
+              <a class="link" href={item.href}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>
