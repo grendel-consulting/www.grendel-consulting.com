@@ -1,6 +1,5 @@
 import {
   CloudBackend,
-  Fn,
   NamedCloudWorkspace,
   TerraformStack,
   TerraformOutput,
