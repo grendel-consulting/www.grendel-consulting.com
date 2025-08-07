@@ -138,22 +138,6 @@ export class SpaWebsite extends TerraformStack {
       bucket: targetDomain,
     });
 
-    const apexBucket = !includeApex
-      ? null
-      : new S3Bucket(this, "apex_website", {
-          bucket: Token.asString(props.apexDomain),
-        });
-
-    if (apexBucket) {
-      new S3BucketWebsiteConfiguration(this, "apex_website_config", {
-        bucket: Token.asString(apexBucket.id),
-        redirectAllRequestsTo: {
-          hostName: targetDomain,
-          protocol: "https",
-        },
-      });
-    }
-
     new S3BucketVersioningA(this, "versioning", {
       bucket: bucket.id,
       versioningConfiguration: {
@@ -419,6 +403,68 @@ export class SpaWebsite extends TerraformStack {
     });
 
     if (includeApex) {
+      const apexBucket = new S3Bucket(this, "apex_website", {
+        bucket: Token.asString(props.apexDomain),
+      });
+
+      const apexRedirect = new S3BucketWebsiteConfiguration(
+        this,
+        "apex_website_config",
+        {
+          bucket: Token.asString(apexBucket.id),
+          redirectAllRequestsTo: {
+            hostName: targetDomain,
+            protocol: "https",
+          },
+        },
+      );
+
+      const apexDistribution = new CloudfrontDistribution(
+        this,
+        "apex_distribution",
+        {
+          aliases: [props.apexDomain],
+          defaultRootObject: "index.html",
+
+          isIpv6Enabled: true,
+          enabled: true,
+          httpVersion: "http2and3",
+
+          viewerCertificate: {
+            acmCertificateArn: certificate.arn,
+            minimumProtocolVersion: "TLSv1.2_2021",
+            sslSupportMethod: "sni-only",
+          },
+
+          restrictions: {
+            geoRestriction: {
+              restrictionType: isRestricted ? "whitelist" : "none",
+              locations: isRestricted ? ["GB"] : [],
+            },
+          },
+
+          origin: [
+            {
+              domainName: apexBucket.bucketRegionalDomainName,
+              originId: `s3-${props.apexDomain}`,
+            },
+          ],
+          defaultCacheBehavior: {
+            allowedMethods: ["GET", "HEAD", "OPTIONS"],
+            cachedMethods: ["GET", "HEAD"],
+            targetOriginId: `s3-${props.apexDomain}`,
+            viewerProtocolPolicy: "redirect-to-https",
+            cachePolicyId: cachePolicy.id,
+            responseHeadersPolicyId: responseHeaders.id,
+            compress: true,
+          },
+
+          tags: {
+            Name: props.apexDomain,
+          },
+        },
+      );
+
       new Route53Record(this, "apex", {
         provider: controlPlaneProvider,
         zoneId: existingZone.zoneId,
