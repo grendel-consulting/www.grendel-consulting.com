@@ -10,7 +10,7 @@ const bakeBreadcrumbs = (path: string) => {
   // Split the path into segments and filter out "/" segments
   const segments = path.split("/").filter((segment) => segment.trim() !== "");
   const breadcrumbs = segments.map((segment, index) => {
-    const target = "/" + segments.slice(0, index + 1).join("/");
+    const target = "/" + segments.slice(0, index + 1).join("/") + "/";
     return {
       // Deslugify the segment for display
       segment: segment
@@ -23,15 +23,20 @@ const bakeBreadcrumbs = (path: string) => {
   return [{ segment: "Home", target: "/" }, ...breadcrumbs];
 };
 
-// Beware, `currentPath` is undefined at the root
 const breadcrumbs =
-  currentPath === undefined ? [] : bakeBreadcrumbs(currentPath);
+  currentPath === undefined || currentPath === "/"
+    ? []
+    : bakeBreadcrumbs(currentPath);
 ---
 
 {
   breadcrumbs.length === 0 ? null : (
     <nav class="breadcrumbs text-sm" aria-label="Breadcrumbs">
-      <ul itemscope itemtype="https://schema.org/BreadcrumbList">
+      <ul
+        class="not-prose"
+        itemscope
+        itemtype="https://schema.org/BreadcrumbList"
+      >
         {breadcrumbs.map((crumb, index) => (
           <li
             itemprop="itemListElement"
@@ -44,7 +49,7 @@ const breadcrumbs =
               itemprop="item"
               itemid={crumb.target}
               href={crumb.target}
-              class="link link-hover"
+              class="link link-hover prose"
               aria-label={`Go to ${crumb.segment}`}
             >
               <span itemprop="name">{crumb.segment}</span>
