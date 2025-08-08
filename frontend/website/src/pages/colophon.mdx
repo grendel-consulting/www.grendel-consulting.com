@@ -1,6 +1,6 @@
 ---
 title: Colophon
-description: We use Astro with MDX, DaisyUI and Tailwind, with a static site deployed onto AWS Cloudfront
+description: We use Astro with MDX, DaisyUI and Tailwind, with a static site deployed onto a AWS Cloudfront Distribution using CDKTF
 created: 2023-12-28 22:00:00
 modified: 2025-07-26 06:40:00
 layout: "@layouts/Layout.astro"
@@ -14,7 +14,7 @@ We built this website by hand, primarily to explore a collection of Web 2.0 tech
 
 Developer experience is key, since I want to focus time on value, and so I use [PNPM](https://pnpm.io/) and [Turbo](https://turbo.build/repo) for a rock solid monorepo and build setup, complete with tooling such as linters, formatters, testing, and other fail-fast signals.
 
-All of the infrastructure is defined in [CDKTF](https://developer.hashicorp.com/terraform/cdktf), a Typescript wrapper over [Terraform](https://developer.hashicorp.com/terraform), and deployed into an [<dfn id="aws">Amazon Web Services</dfn>](https://aws.amazon.com/) (<abbr>AWS</abbr>) Account to host the website. It creates a CloudFront Distribution that serves content from an isolated S3 storage bucket, with hardened security headers and apex redirection.
+All of the infrastructure is defined in [CDKTF](https://developer.hashicorp.com/terraform/cdktf), a Typescript wrapper over [Terraform](https://developer.hashicorp.com/terraform), and deployed into an [<dfn id="aws">Amazon Web Services</dfn>](https://aws.amazon.com/) (<abbr>AWS</abbr>) Account to host the website. It creates a CloudFront Distribution that serves content from an isolated S3 storage bucket, with hardened security headers and apex and directory redirection.
 
 Deployment is through <abbr title="Continuous Integration and Continuous Deployment">CICD</abbr> using [AWS CodePipeline](https://aws.amazon.com/codepipeline/) and [Terraform Cloud](https://developer.hashicorp.com/terraform/cloud-docs).
 
