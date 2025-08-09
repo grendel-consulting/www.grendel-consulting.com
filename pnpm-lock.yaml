@@ -85,8 +85,8 @@ importers:
         specifier: 11.0.0
         version: 11.0.0(cdktf@0.21.0(constructs@10.4.2))(constructs@10.4.2)
       '@cdktf/provider-aws':
-        specifier: 21.6.0
-        version: 21.6.0(cdktf@0.21.0(constructs@10.4.2))(constructs@10.4.2)
+        specifier: 21.7.0
+        version: 21.7.0(cdktf@0.21.0(constructs@10.4.2))(constructs@10.4.2)
       cdktf:
         specifier: 0.21.0
         version: 0.21.0(constructs@10.4.2)
@@ -573,8 +573,8 @@ packages:
       cdktf: ^0.21.0
       constructs: ^10.4.2
 
-  '@cdktf/provider-aws@21.6.0':
-    resolution: {integrity: sha512-uUoar5bwMf/dNM3XgkzYJQ9/F7jteV+EIM2igrJWdxwq6CL2S9Ss3LjckIcDbhuVhtIEwTo9dwwLx7Mu/ECcHA==}
+  '@cdktf/provider-aws@21.7.0':
+    resolution: {integrity: sha512-BJXLHGoFFSFJRfyOduRZEako4f9fKLcrE4y7Ep7rzkMSjVJS6mWzT6cwhOwErI4O9nCIh9zmUlrwfnSuDN42Pw==}
     engines: {node: '>= 20.9.0'}
     peerDependencies:
       cdktf: ^0.21.0
@@ -5665,7 +5665,7 @@ snapshots:
       cdktf: 0.21.0(constructs@10.4.2)
       constructs: 10.4.2
 
-  '@cdktf/provider-aws@21.6.0(cdktf@0.21.0(constructs@10.4.2))(constructs@10.4.2)':
+  '@cdktf/provider-aws@21.7.0(cdktf@0.21.0(constructs@10.4.2))(constructs@10.4.2)':
     dependencies:
       cdktf: 0.21.0(constructs@10.4.2)
       constructs: 10.4.2
