@@ -332,7 +332,7 @@ export class SpaWebsite extends TerraformStack {
       filename: Token.asString(middlewareFile.outputPath),
       sourceCodeHash: Token.asString(middlewareFile.outputBase64Sha256),
       handler: `${middleware}.handler`,
-      runtime: "nodejs20.x",
+      runtime: "nodejs22.x",
       role: middlewareRole.arn,
       publish: true,
     });
