@@ -21,7 +21,7 @@
     "@astrojs/mdx": "4.3.3",
     "@astrojs/ts-plugin": "1.10.4",
     "@repo/eslint-config": "workspace:*",
-    "astro": "5.12.9",
+    "astro": "5.13.0",
     "eslint": "9.33.0",
     "node-html-parser": "7.0.1",
     "sharp": "0.34.3",
@@ -29,7 +29,7 @@
     "zod": "4.0.17"
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.4.2",
+    "@astrojs/sitemap": "3.5.0",
     "@tailwindcss/typography": "0.5.16",
     "@tailwindcss/vite": "4.1.11",
     "daisyui": "5.0.50",
