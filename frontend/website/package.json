@@ -26,7 +26,7 @@
     "node-html-parser": "7.0.1",
     "sharp": "0.34.5",
     "typescript": "5.9.3",
-    "zod": "4.1.12"
+    "zod": "4.1.13"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.6.0",
