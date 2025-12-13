@@ -82,8 +82,8 @@ importers:
   infrastructure/static-site:
     dependencies:
       '@cdktf/provider-archive':
-        specifier: 11.0.0
-        version: 11.0.0(cdktf@0.21.0(constructs@10.4.3))(constructs@10.4.3)
+        specifier: 11.0.1
+        version: 11.0.1(cdktf@0.21.0(constructs@10.4.3))(constructs@10.4.3)
       '@cdktf/provider-aws':
         specifier: 21.22.0
         version: 21.22.0(cdktf@0.21.0(constructs@10.4.3))(constructs@10.4.3)
@@ -574,8 +574,8 @@ packages:
     resolution: {integrity: sha512-8XqW8xGn++Eqqbz3e9wKuK7mxryeRjs4LOHLxbh2lwKeSbuNR4NFifDZT4KzvjU6HMOPbiNTsWpniK5EJfTWkg==}
     engines: {node: '>=18'}
 
-  '@cdktf/provider-archive@11.0.0':
-    resolution: {integrity: sha512-nouLjv9n3mr44x+KTi8Jq4PT8KAKoziEG24jbN1EkZo5uTrAb+XL2XzJokZ/xIE7aXEX4Xo6BkmKaeEtF0h5ig==}
+  '@cdktf/provider-archive@11.0.1':
+    resolution: {integrity: sha512-2Plwhj1hVUOYmQrxNbBvy2nrw/gyHZKnQFauPCwjhQX+MpRImF7cceKgX8zZgBPvB5YEP75MIFPbr4sjxDWeHw==}
     engines: {node: '>= 20.9.0'}
     deprecated: See https://cdk.tf/imports for details on how to continue to use the archive provider in your CDK for Terraform (CDKTF) projects by generating the bindings locally.
     peerDependencies:
@@ -5699,7 +5699,7 @@ snapshots:
     dependencies:
       fontkit: 2.0.4
 
-  '@cdktf/provider-archive@11.0.0(cdktf@0.21.0(constructs@10.4.3))(constructs@10.4.3)':
+  '@cdktf/provider-archive@11.0.1(cdktf@0.21.0(constructs@10.4.3))(constructs@10.4.3)':
     dependencies:
       cdktf: 0.21.0(constructs@10.4.3)
       constructs: 10.4.3
