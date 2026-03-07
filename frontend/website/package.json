@@ -22,7 +22,7 @@
     "@astrojs/ts-plugin": "1.10.6",
     "@repo/eslint-config": "workspace:*",
     "astro": "5.18.0",
-    "eslint": "9.39.1",
+    "eslint": "9.39.3",
     "node-html-parser": "7.0.1",
     "sharp": "0.34.5",
     "typescript": "5.9.3",
