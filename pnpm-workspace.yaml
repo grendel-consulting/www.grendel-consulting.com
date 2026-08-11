@@ -10,3 +10,6 @@ onlyBuiltDependencies:
   - sharp
 
 minimumReleaseAge: 2160
+minimumReleaseAgeExclude:
+  # Renovate security update: turbo@2.9.14
+  - turbo@2.9.14
