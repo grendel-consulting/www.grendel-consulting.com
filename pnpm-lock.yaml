@@ -194,8 +194,8 @@ importers:
         specifier: 17.4.2
         version: 17.4.2
       playwright-bdd:
-        specifier: 8.5.0
-        version: 8.5.0(@playwright/test@1.59.1)
+        specifier: 8.5.1
+        version: 8.5.1(@playwright/test@1.59.1)
 
 packages:
 
@@ -4311,8 +4311,8 @@ packages:
     resolution: {integrity: sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==}
     engines: {node: '>=8'}
 
-  playwright-bdd@8.5.0:
-    resolution: {integrity: sha512-w/Bd5C1d6Xe5e1oREsbt2rDN0/Mcp+J2OjQwSl49/mroa2K6UZU33P7v91pLQPl1otDitMwJOaOeJsqaj7WU7w==}
+  playwright-bdd@8.5.1:
+    resolution: {integrity: sha512-lDNaDzW8RvbvsKuR8cZaP9LBnRbG9juCOE3tgwm3pr1O0W1ooGPz7X8xH7zdUbqGgHbdOQ+5XpUTlOJrvpY6Tw==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -10361,7 +10361,7 @@ snapshots:
     dependencies:
       find-up: 4.1.0
 
-  playwright-bdd@8.5.0(@playwright/test@1.59.1):
+  playwright-bdd@8.5.1(@playwright/test@1.59.1):
     dependencies:
       '@cucumber/cucumber-expressions': 18.0.1
       '@cucumber/gherkin': 32.1.2
