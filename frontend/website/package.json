@@ -17,9 +17,9 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@astrojs/check": "0.9.8",
+    "@astrojs/check": "0.9.10",
     "@astrojs/mdx": "4.3.14",
-    "@astrojs/ts-plugin": "1.10.7",
+    "@astrojs/ts-plugin": "1.10.11",
     "@repo/eslint-config": "workspace:*",
     "astro": "5.18.1",
     "eslint": "10.2.1",
@@ -29,7 +29,7 @@
     "zod": "4.3.6"
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.7.2",
+    "@astrojs/sitemap": "3.7.3",
     "@tailwindcss/typography": "0.5.19",
     "@tailwindcss/vite": "4.2.4",
     "daisyui": "5.5.19",
