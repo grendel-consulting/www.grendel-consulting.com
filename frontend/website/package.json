@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
-    "@tailwindcss/typography": "0.5.19",
+    "@tailwindcss/typography": "0.5.20",
     "@tailwindcss/vite": "4.2.4",
     "daisyui": "5.5.19",
     "tailwindcss": "4.2.4"
